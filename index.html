@@ -37,21 +37,21 @@ deployment</a></li>
 </ol></li>
 <li><a href="#removal">Removal</a></li>
 <li><a href="#documentation">Documentation</a></li>
-<li><a href="#screenshots">Screenshots</a></li>
-<li><a href="#troubleshooting">Troubleshooting</a></li>
 <li><a href="#usage">Usage</a>
 <ol type="1">
-<li><a href="#introduction-to-using-the-command-line">Introduction to
+<li><a href="https://rooncommand.dev/usage#introduction-to-using-the-command-line">Introduction to
 Using the Command Line</a></li>
-<li><a href="#voice-activated-roon-control">Voice Activated Roon
+<li><a href="https://rooncommand.dev/usage#voice-activated-roon-control">Voice Activated Roon
 Control</a>
 <ol type="1">
-<li><a href="#roon-voice-commands-with-siri">Roon Voice Commands with
+<li><a href="https://rooncommand.dev/usage#roon-voice-commands-with-siri">Roon Voice Commands with
 Siri</a></li>
-<li><a href="#roon-voice-commands-with-ga">Roon Voice Commands with
+<li><a href="https://rooncommand.dev/usage#roon-voice-commands-with-ga">Roon Voice Commands with
 Google Assistant</a></li>
 </ol></li>
 </ol></li>
+<li><a href="#screenshots">Screenshots</a></li>
+<li><a href="#troubleshooting">Troubleshooting</a></li>
 <li><a href="#motivation">Motivation</a>
 <ol type="1">
 <li><a href="#why-would-i-need-or-want-command-line-control-of-roon">Why
@@ -243,139 +243,13 @@ class="sourceCode bash"><code class="sourceCode bash"><span id="cb16-1"><a href=
 <span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>    <span class="bu">cd</span> RoonCommandLine</span>
 <span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>    <span class="ex">./Uninstall</span></span></code></pre></div>
 <h2 id="documentation">Documentation</h2>
-<p>All RoonCommandLine commands have manual pages. Execute
-<code>man &lt;command-name&gt;</code> to view the manual page for a
-command. The <code>roon</code> frontend is the primary user interface
-for the RoonCommandLine commands and the manual page for
-<code>roon</code> can be viewed with the command <code>man roon</code>.
-Most commands also have help/usage messages that can be viewed with the
-<strong>-u</strong> argument option, e.g. <code>roon -u</code>.</p>
-<p>The manual page for the primary RoonCommandLine user interface,
-<code>roon</code>, can be viewed by issueing the command:</p>
-<ul>
-<li><code>man roon</code></li>
-</ul>
-<p>Manual pages for each RoonCommandLine backend command can be viewed
-by issueing any of the following commands:</p>
-<ul>
-<li><a
-href="https://github.com/doctorfree/RoonCommandLine/-/blob/master/markdown/clone_pyroon.1.md">man
-clone_pyroon</a></li>
-<li><a
-href="https://github.com/doctorfree/RoonCommandLine/-/blob/master/markdown/get_core_ip.1.md">man
-get_core_ip</a></li>
-<li><a
-href="https://github.com/doctorfree/RoonCommandLine/-/blob/master/markdown/get_zone_info.1.md">man
-get_zone_info</a></li>
-<li><a
-href="https://github.com/doctorfree/RoonCommandLine/-/blob/master/markdown/get_zones.1.md">man
-get_zones</a></li>
-<li><a
-href="https://github.com/doctorfree/RoonCommandLine/-/blob/master/markdown/get_zone_remaining.1.md">man
-get_zone_remaining</a></li>
-<li><a
-href="https://github.com/doctorfree/RoonCommandLine/-/blob/master/markdown/get_zone_volume.1.md">man
-get_zone_volume</a></li>
-<li><a
-href="https://github.com/doctorfree/RoonCommandLine/-/blob/master/markdown/list_albums.1.md">man
-list_albums</a></li>
-<li><a
-href="https://github.com/doctorfree/RoonCommandLine/-/blob/master/markdown/list_artists.1.md">man
-list_artists</a></li>
-<li><a
-href="https://github.com/doctorfree/RoonCommandLine/-/blob/master/markdown/list_artist_albums.1.md">man
-list_artist_albums</a></li>
-<li><a
-href="https://github.com/doctorfree/RoonCommandLine/-/blob/master/markdown/list_artist_tracks.1.md">man
-list_artist_tracks</a></li>
-<li><a
-href="https://github.com/doctorfree/RoonCommandLine/-/blob/master/markdown/list_composer_albums.1.md">man
-list_composer_albums</a></li>
-<li><a
-href="https://github.com/doctorfree/RoonCommandLine/-/blob/master/markdown/list_composers.1.md">man
-list_composers</a></li>
-<li><a
-href="https://github.com/doctorfree/RoonCommandLine/-/blob/master/markdown/list_genre_albums.1.md">man
-list_genre_albums</a></li>
-<li><a
-href="https://github.com/doctorfree/RoonCommandLine/-/blob/master/markdown/list_genre_artists.1.md">man
-list_genre_artists</a></li>
-<li><a
-href="https://github.com/doctorfree/RoonCommandLine/-/blob/master/markdown/list_playlist_tracks.1.md">man
-list_playlist_tracks</a></li>
-<li><a
-href="https://github.com/doctorfree/RoonCommandLine/-/blob/master/markdown/list_genres.1.md">man
-list_genres</a></li>
-<li><a
-href="https://github.com/doctorfree/RoonCommandLine/-/blob/master/markdown/list_playlists.1.md">man
-list_playlists</a></li>
-<li><a
-href="https://github.com/doctorfree/RoonCommandLine/-/blob/master/markdown/list_radio.1.md">man
-list_radio</a></li>
-<li><a
-href="https://github.com/doctorfree/RoonCommandLine/-/blob/master/markdown/list_tags.1.md">man
-list_tags</a></li>
-<li><a
-href="https://github.com/doctorfree/RoonCommandLine/-/blob/master/markdown/list_zones.1.md">man
-list_zones</a></li>
-<li><a
-href="https://github.com/doctorfree/RoonCommandLine/-/blob/master/markdown/now_playing.1.md">man
-now_playing</a></li>
-<li><a
-href="https://github.com/doctorfree/RoonCommandLine/-/blob/master/markdown/play_album.1.md">man
-play_album</a></li>
-<li><a
-href="https://github.com/doctorfree/RoonCommandLine/-/blob/master/markdown/play_artist.1.md">man
-play_artist</a></li>
-<li><a
-href="https://github.com/doctorfree/RoonCommandLine/-/blob/master/markdown/play_artist_album.1.md">man
-play_artist_album</a></li>
-<li><a
-href="https://github.com/doctorfree/RoonCommandLine/-/blob/master/markdown/play_artist_track.1.md">man
-play_artist_track</a></li>
-<li><a
-href="https://github.com/doctorfree/RoonCommandLine/-/blob/master/markdown/play_composer.1.md">man
-play_composer</a></li>
-<li><a
-href="https://github.com/doctorfree/RoonCommandLine/-/blob/master/markdown/play_composer_album.1.md">man
-play_composer_album</a></li>
-<li><a
-href="https://github.com/doctorfree/RoonCommandLine/-/blob/master/markdown/play_genre_album.1.md">man
-play_genre_album</a></li>
-<li><a
-href="https://github.com/doctorfree/RoonCommandLine/-/blob/master/markdown/play_genre_artist.1.md">man
-play_genre_artist</a></li>
-<li><a
-href="https://github.com/doctorfree/RoonCommandLine/-/blob/master/markdown/play_genre.1.md">man
-play_genre</a></li>
-<li><a
-href="https://github.com/doctorfree/RoonCommandLine/-/blob/master/markdown/play_playlist.1.md">man
-play_playlist</a></li>
-<li><a
-href="https://github.com/doctorfree/RoonCommandLine/-/blob/master/markdown/play_radio.1.md">man
-play_radio</a></li>
-<li><a
-href="https://github.com/doctorfree/RoonCommandLine/-/blob/master/markdown/play_tag.1.md">man
-play_tag</a></li>
-<li><a
-href="https://github.com/doctorfree/RoonCommandLine/-/blob/master/markdown/roon_fade.1.md">man
-roon_fade</a></li>
-<li><a
-href="https://github.com/doctorfree/RoonCommandLine/-/blob/master/markdown/roon_faded.5.md">man
-roon_faded</a></li>
-<li><a
-href="https://github.com/doctorfree/RoonCommandLine/-/blob/master/markdown/set_volume.1.md">man
-set_volume</a></li>
-<li><a
-href="https://github.com/doctorfree/RoonCommandLine/-/blob/master/markdown/set_zone.1.md">man
-set_zone</a></li>
-<li><a
-href="https://github.com/doctorfree/RoonCommandLine/-/blob/master/markdown/set_zone_group.1.md">man
-set_zone_group</a></li>
-<li><a
-href="https://github.com/doctorfree/RoonCommandLine/-/blob/master/markdown/zone_command.1.md">man
-zone_command</a></li>
-</ul>
+See the
+<a href="https://rooncommand.dev/documentation">RoonCommandLine Documentation section</a>
+for RoonCommandLine documentation.
+<h2 id="usage">Usage</h2>
+See the
+<a href="https://rooncommand.dev/usage">RoonCommandLine Usage section</a>
+for RoonCommandLine usage details.
 <h2 id="screenshots">Screenshots</h2>
 <p>Roon_List_Artist_Tracks.png: 1354 x 409 Roon_Play_Artist_Track.png:
 1349 x 488 Roon_Set_Zone.png: 800 x 585 Roon_UI.png: 800 x 557</p>
@@ -455,233 +329,6 @@ set to the username used in the SSH commands to execute the Python
 commands on the Python Roon API server. These should have been set for
 you automatically during the installation process but may have been
 misconfigured.</p>
-<h2 id="usage">Usage</h2>
-<p><strong>Note:</strong> The first time you execute the
-<code>roon</code> command you may have to enable the Python Roon API
-extension by clicking “Settings” -&gt; “Extensions” -&gt; “Enable” in a
-Roon Remote client window. On most systems this will not be necessary as
-this was performed during initial installation.</p>
-<p>The Python Roon API scripts must be installed on a system that is on
-the same local network as the Roon Core. The <code>roon</code> shell
-script is the primary user interface. It accepts a wide variety of
-arguments and sends a command to the Python Roon API system which then
-communicates with the Roon Core.</p>
-<p>If no arguments are provided to the <code>roon</code> command then an
-interactive dialog is presented from which the user can select commands
-and queries.</p>
-<p>Here is the current output of “roon -u” which displays a usage
-message.</p>
-<pre><code>Usage: roon -A album -a artist -C composer -f [on|onlog|off|status] -g genre -G zone_group -i
-    -l [albums|artists|artalbums|arttracks|composers|comalbums|genres|genalbums|genartists|playlists|playtracks|tags|zones]
-    -c [group|ungroup|play|play_all|pause|pause_all|stop|stop_all|next|previous|shuffle|repeat|mute|mute_all]
-    -s search -p playlist -T track -t tag -z zone -L -S -r radio
-    -X ex_album -x ex_artist [-EuU]
-Where:
-    -A album selects an album to play
-    -a artist selects an artist to list/play
-    -C composer selects a composer to play
-    -g genre selects a genre to list/play
-    -i displays zone information (combine with &#39;-z zone&#39; for extended
-        info on a specified zone, otherwise display info on all zones)
-    -f [on|onlog|off|status] enables/disables fading/logging in specified zone
-        &#39;on&#39; enables fading, &#39;onlog&#39; fading and logging, &#39;off&#39; disables fading
-        (combine with &#39;-z zone&#39; for &#39;fading&#39; in that zone)
-    -n displays &#39;now playing&#39; information for zones actively playing
-    -N displays &#39;now playing&#39; information for all zones
-        (combine with &#39;-z zone&#39; for &#39;now playing&#39; in only that zone)
-    -p playlist selects a playlist to play
-    -G zone_group specifies a zone grouping specified in roon_api.ini
-    -L setup roon to execute local commands rather than remote via SSH
-    -S Set Roon defaults in roon_api.ini
-    -l [albums|artists|artalbums|arttracks|composers|comalbums|genres|genalbums|genartists|playlists|playtracks|tags|zones]
-        indicates list albums, artists, albums by artist, composers, albums by composers, genres, albums in genre, artists in genre, playlists, tags, or Roon zones
-    -r radio selects a live radio stream to play
-    -s search specifies a term to search for in the lists retrieved with -l
-    -T track specifies a track to play
-    -t tag selects an tag to play
-    -z zone selects the Roon Zone in which to play
-    -c [group|ungroup|play|play_all|pause|pause_all|playpause|stop|stop_all|next|previous|shuffle|repeat|mute|mute_all]
-        issues the command in the selected zone
-        &#39;mute&#39; toggles the zone&#39;s muted or unmuted state
-        &#39;mute_all&#39; toggles all zones&#39; muted or unmuted state
-        &#39;pause_all&#39; pauses playback in all zones
-        &#39;play_all&#39; begins playback in all zones
-        &#39;stop_all&#39; stops playback in all zones and releases devices
-        &#39;shuffle&#39; toggles the zone&#39;s shuffled or unshuffled setting
-        &#39;repeat&#39; toggles the zone&#39;s looping or non-looping setting
-    -v volume sets the volume level in the selected zone
-        The volume argument has the format [g:][r:][s:]num
-        Where &#39;g&#39; indicates set volume for all zones in the group
-        &#39;r&#39; specifies use relative method volume setting
-        &#39;s&#39; specifies use relative_step method volume setting
-        &#39;num&#39; can be absolute, relative, and negative or positive
-    -X ex_album specifies a string to exclude from album/genre names
-    -x ex_artist specifies a string to exclude from artist/composer/playlist names
-    -u displays a full usage message with examples
-    -U displays a usage message without examples
-    -E displays examples with no usage message
-Combine &#39;-a artist&#39; and &#39;-A album&#39; to play an album by a specified artist
-Combine &#39;-a artist&#39; and &#39;-T track&#39; to play a track by a specified artist
-Combine &#39;-a artist&#39; or &#39;-A album&#39; with &#39;-g genre&#39; to play an artist or album in a specified genre
-
-Special search term __all__ matches all entries
-Special name default plays the default setting in roon_api.ini
-
-Example invocations
-    Play artist:
-        roon -a &quot;Deep Purple&quot;
-    Play album by artist:
-        roon -a &quot;Deep Purple&quot; -A Burn
-    Play track by artist:
-        roon -a &quot;Aretha Franklin&quot; -T Think
-    Play artist in specified zone:
-        roon -a &quot;Jethro Tull&quot; -z &quot;Mac Pro DAC&quot;
-    Play genre:
-        roon -g Classical
-    Play default live radio:
-        roon -r default
-    Play playlist:
-        roon -p &quot;Bowie Favs&quot;
-    Play next track:
-        roon -c next
-    Stop play in specified zone:
-        roon -c stop -z Kitchen
-    Mute/Unmute a specified zone:
-        roon -c mute -z &quot;Mac Pro DAC&quot;
-    Mute/Unmute all zones:
-        roon -c mute_all
-    List all playlists containing the string &#39;Best&#39;:
-        roon -l playlists -s Best
-    List albums by artist:
-        roon -l artalbums -a &quot;Deep Purple&quot;
-    List artists containing the string &#39;Will&#39; in the &#39;Country&#39; genre:
-        roon -l genartists -a Will -g Country
-    List albums containing the string &#39;Magic&#39; in the &#39;Rock&#39; genre:
-        roon -l genalbums -A Magic -g Rock
-    Play artist containing the string &#39;Willie&#39; in the &#39;Country&#39; genre:
-        roon -a Willie -g Country
-    Play album containing the string &#39;Magic&#39; in the &#39;Rock&#39; genre:
-        roon -A Magic -g Rock
-    Group the zones listed in roon_api.ini Group_foobar:
-        roon -G foobar -c group
-    Set the volume level to 50 in the currently active zone
-        roon -v 50
-    Decrease the volume level by 10 in the currently active zone
-        roon -v r:-10
-    Set the volume level to 40 in all zones grouped with the zone named &#39;Mac Pro DAC&#39;
-        roon -v g:40 -z &#39;Mac Pro DAC&#39;
-    Increase the volume level by 20 in all zones grouped with the zone named &#39;Mac Pro DAC&#39;
-        roon -v g:r:20 -z &#39;Mac Pro DAC&#39;
-    Get info on all Roon zones
-        roon -i
-    Get extended info on Roon zone named &#39;Mac Pro DAC&#39;
-        roon -i -z &#39;Mac Pro DAC&#39;
-    Get now playing info on all zones regardless of state
-        roon -N
-    Get now playing info on all zones actively playing
-        roon -n
-    Get now playing info on Roon zone named &#39;Mac Pro DAC&#39;
-        roon -n -z &#39;Mac Pro DAC&#39;
-    Enable volume fading in default Roon zone
-        roon -f on
-    Disable volume fading in default Roon zone
-        roon -f off
-    NOTE: Use quotes to specify media names which contain spaces.
-    For example, to play the album &#39;Love Bomb&#39;:
-        roon -A &quot;Love Bomb&quot;</code></pre>
-<p>When playing media from the command line it is possible to specify a
-substring with which a partial match can be made. In order to play
-media, either the full name of the desired media or enough of a
-substring to uniquely match should be supplied. This applies to playing
-an album, artist, composer, genre, playlist, or tag. For example, the
-command “roon -a Tull” would play media by artist “Jethro Tull” unless
-there were multiple artist name matches to the substring “Tull”. All
-partial matching is case sensitive - “roon -a tull” would not match
-“Jethro Tull”.</p>
-<p>If multiple matches are found, the first match in the list is played.
-To narrow a search, exclusion filtering can be performed. Use the
-<code>-x string</code> argument to specify an exclusion substring for
-artist, composer, and playlist library searches. Use the
-<code>-X string</code> argument to specify an exclusion substring for
-album and genre library searches.</p>
-<p>In a large Roon library where multiple matches may be frequent and
-large, one approach is to first list the media you wish to play and
-based on the list of matches returned construct exclusion arguments that
-narrow the matches to a list whose first element is the media you wish
-to play. For example:</p>
-<p><code>roon -l genalbums -g Classical -A Mozart</code></p>
-<p>might return the following:</p>
-<p>Albums in Classical genre with Mozart in name :</p>
-<p>Berliner Philharmoniker plays Mozart Bruch: Violin Concerto No. 1,
-Op. 26 - Mozart: Violin Concerto No. 1, K. 207 Mozart: Concertos For Two
-Pianos K 242 &amp; 365; Kozeluch: Four Hands Piano Concerto Mozart -
-Great Recordings Resonances (Mozart, Berg, Liszt, Bartok, Gluck)</p>
-<p>If you tried to play media using these arguments then the first in
-the list would be played - “Berliner Philharmoniker plays Mozart”. But
-you want to play the second one performed byy Bruch. This can be
-accomplished either by modifying the album search term or by using an
-album exclusion filter:</p>
-<p><code>roon -l genalbums -g Classical -A Mozart -X Berliner</code></p>
-<p>would list the “Violin Concerto No. 1, Op. 26” by Mozart fist.
-Alternately,</p>
-<p><code>roon -l genalbums -g Classical -A "Mozart: Violin"</code></p>
-<p>would also list the concerto first. Another search route for this
-album would be by searching albums by composer rather than albums by
-genre:</p>
-<p><code>roon -l comalbums -C Mozart -A "Violin Concerto"</code></p>
-<p>Listing/playing media in the Roon Library “Composers” category
-searches the entire Roon database of available Composers rather than
-limiting the search to the albums or artists etc in your library. This
-opens up a pretty wide search field of composers and their works.</p>
-<p>Finally, to play the media you have located using one of the listing
-techniques described above, simply re-run the same command used to list
-the media only remove the <code>-l &lt;listingtype&gt;</code> arguments.
-For example, if the listing command:</p>
-<p><code>roon -l genalbums -g Classical -A Mozart -X Berliner</code></p>
-<p>produced a search result to your liking and you now wish to play the
-first entry in that returned list, remove the <code>-l genalbums</code>
-argument and re-run the command:</p>
-<p><code>roon -g Classical -A Mozart -X Berliner</code></p>
-<p>Any listing command can be turned into a play command in a similar
-manner.</p>
-<h3 id="introduction-to-using-the-command-line">Introduction to Using
-the Command Line</h3>
-<p>The command line has a long and storied history in computing. Read
-some of that history, learn how to open a command line terminal window
-on various systems, how to get started using the command line, and see
-some examples of why the command line interface is so powerful by
-reading the RoonCommandLine wiki article <a
-href="https://github.com/doctorfree/RoonCommandLine/-/wikis/Introduction-to-Using-the-Command-Line">Introduction
-to Using the Command Line</a>.</p>
-<p>This introduction to the command line includes an example of how to
-automate playback of Roon playlists in specified Roon zones at
-designated times of day.</p>
-<h3 id="voice-activated-roon-control">Voice Activated Roon Control</h3>
-<p>RoonCommandLine can be used to provide a command line interface for
-the remote execution of commands via SSH or other facilities such as
-Google Assistant. In this way, voice control of Roon can be implemented
-on mobile devices or other “smart” devices. Example implementations
-using Apple Siri and Google Assistant are described in the following
-RoonCommandLine Wiki articles.</p>
-<h4 id="roon-voice-commands-with-siri">Roon Voice Commands with
-Siri</h4>
-<p>The RoonCommandLine Wiki article <a
-href="https://github.com/doctorfree/RoonCommandLine/-/wikis/Roon-Voice-Commands-with-Siri">“Roon
-Voice Commands with Siri”</a> describes in detail how to setup Roon
-voice commands using Apple Shortcuts on an iOS device. This method
-utilizes Siri to recognize the voice commands and run the Shortcut which
-uses SSH to execute the command.</p>
-<h4 id="roon-voice-commands-with-google-assistant">Roon Voice Commands
-with Google Assistant</h4>
-<p>The RoonCommandLine Wiki article <a
-href="https://github.com/doctorfree/RoonCommandLine/-/wikis/Roon-Voice-Commands-with-GA">“Roon
-Voice Commands with Google Assistant”</a> describes in detail how to
-setup Roon voice commands using the <a
-href="http://wiki.bugsounet.fr/en/MMM-GoogleAssistant">MMM-GoogleAssistant</a>
-and <a href="http://wiki.bugsounet.fr/en/MMM-Detector">MMM-Detector</a>
-modules on a <a href="https://magicmirror.builders/">MagicMirror</a>.
-This method utilizes Google Assistant recipes to control Roon with voice
-commands.</p>
 <h2 id="motivation">Motivation</h2>
 <h3 id="why-would-i-need-or-want-command-line-control-of-roon">Why would
 I need or want command line control of Roon</h3>
