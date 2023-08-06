@@ -150,7 +150,7 @@ then that name change will also need to be reflected in the `roon_api.ini` group
 
 If you wish to enable remote exection of the RoonCommandLine tools then
 it is necessary to setup SSH public key authentication. See the
-[Troubleshooting section](#troubleshooting) below for tips on configuring
+[Troubleshooting section](https://rooncommand.dev#troubleshooting) below for tips on configuring
 SSH public key authentication. The RoonCommandLine utilities can be
 executed locally on the same system they are installed on by enabling
 local access with the `roon -L` command. This avoids the need to enable
