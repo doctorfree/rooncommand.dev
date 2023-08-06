@@ -12,22 +12,22 @@ layout: page
 <li><a href="#requirements">Requirements</a></li>
 <li><a href="#installation">Installation</a>
 <ol type="1">
-<li><a href="#debian-package-installation">Debian Package
+<li><a href="https://rooncommand.dev/install#debian-package-installation">Debian Package
 installation</a></li>
-<li><a href="#rpm-package-installation">RPM Package
+<li><a href="https://rooncommand.dev/install#rpm-package-installation">RPM Package
 installation</a></li>
-<li><a href="#scripted-linux-installation">Scripted Linux
+<li><a href="https://rooncommand.dev/install#scripted-linux-installation">Scripted Linux
 installation</a></li>
-<li><a href="#mac-os-x-installation">Mac OS X installation</a></li>
-<li><a href="#post-installation-configuration">Post installation
+<li><a href="https://rooncommand.dev/install#mac-os-x-installation">Mac OS X installation</a></li>
+<li><a href="https://rooncommand.dev/install#post-installation-configuration">Post installation
 configuration</a>
 <ol type="1">
-<li><a href="#zone-groupings-and-defaults">Zone groupings and
+<li><a href="https://rooncommand.dev/install#zone-groupings-and-defaults">Zone groupings and
 defaults</a></li>
-<li><a href="#ssh-public-key-authentication">SSH public key
+<li><a href="https://rooncommand.dev/install#ssh-public-key-authentication">SSH public key
 authentication</a></li>
 </ol></li>
-<li><a href="#manual-installation">Manual installation</a></li>
+<li><a href="https://rooncommand.dev/install#manual-installation">Manual installation</a></li>
 </ol></li>
 <li><a href="#upgrades">Upgrades</a></li>
 <li><a href="#remote-deployment">Remote deployment</a>
@@ -787,114 +787,114 @@ installation accompanied with extensive automated configuration. In most
 environments, deployment of this package will require little to no
 manual configuration.</p>
 <h2 id="contents">Contents</h2>
-<p><a href="bin/roon"><strong>roon</strong></a> - Frontend that provides
+<p><a href="https://github.com/doctorfree/RoonCommandLine/blob/master/bin/roon"><strong>roon</strong></a> - Frontend that provides
 the primary user interface to communicate commands via the Python Roon
 API. Recommended usage is to issue Roon commands and queries via the
 <code>roon</code> frontend rather than executing the following commands
 directly.</p>
-<p><a href="bin/clone_pyroon"><strong>clone_pyroon</strong></a> -
+<p><a href="https://github.com/doctorfree/RoonCommandLine/blob/master/bin/clone_pyroon"><strong>clone_pyroon</strong></a> -
 Retrieve the pyroon project source code from Github and apply my
 patches</p>
-<p><a href="bin/get_core_ip"><strong>get_core_ip</strong></a> - Retrieve
+<p><a href="https://github.com/doctorfree/RoonCommandLine/blob/master/bin/get_core_ip"><strong>get_core_ip</strong></a> - Retrieve
 the Roon Core IP address</p>
-<p><a href="bin/get_zone_info"><strong>get_zone_info</strong></a> -
+<p><a href="https://github.com/doctorfree/RoonCommandLine/blob/master/bin/get_zone_info"><strong>get_zone_info</strong></a> -
 Retrieve zone information</p>
 <p><a
-href="bin/get_zone_remaining"><strong>get_zone_remaining</strong></a> -
+href="https://github.com/doctorfree/RoonCommandLine/blob/master/bin/get_zone_remaining"><strong>get_zone_remaining</strong></a> -
 Get remaining play time in zone</p>
-<p><a href="bin/get_zones"><strong>get_zones</strong></a> - Get
+<p><a href="https://github.com/doctorfree/RoonCommandLine/blob/master/bin/get_zones"><strong>get_zones</strong></a> - Get
 zones</p>
-<p><a href="bin/get_zone_volume"><strong>get_zone_volume</strong></a> -
+<p><a href="https://github.com/doctorfree/RoonCommandLine/blob/master/bin/get_zone_volume"><strong>get_zone_volume</strong></a> -
 Get volume in zone</p>
-<p><a href="bin/play_album"><strong>play_album</strong></a> - Frontend
+<p><a href="https://github.com/doctorfree/RoonCommandLine/blob/master/bin/play_album"><strong>play_album</strong></a> - Frontend
 for playing a specified album in my Roon library</p>
-<p><a href="bin/play_artist"><strong>play_artist</strong></a> - Frontend
+<p><a href="https://github.com/doctorfree/RoonCommandLine/blob/master/bin/play_artist"><strong>play_artist</strong></a> - Frontend
 for playing a specified artist in my Roon library</p>
 <p><a
-href="bin/play_artist_album"><strong>play_artist_album</strong></a> -
+href="https://github.com/doctorfree/RoonCommandLine/blob/master/bin/play_artist_album"><strong>play_artist_album</strong></a> -
 Play album by artist</p>
 <p><a
-href="bin/play_artist_track"><strong>play_artist_track</strong></a> -
+href="https://github.com/doctorfree/RoonCommandLine/blob/master/bin/play_artist_track"><strong>play_artist_track</strong></a> -
 Play track by artist</p>
-<p><a href="bin/play_composer"><strong>play_composer</strong></a> - Play
+<p><a href="https://github.com/doctorfree/RoonCommandLine/blob/master/bin/play_composer"><strong>play_composer</strong></a> - Play
 composer</p>
 <p><a
-href="bin/play_composer_album"><strong>play_composer_album</strong></a>
+href="https://github.com/doctorfree/RoonCommandLine/blob/master/bin/play_composer_album"><strong>play_composer_album</strong></a>
 - Play album by composer</p>
-<p><a href="bin/play_genre_album"><strong>play_genre_album</strong></a>
+<p><a href="https://github.com/doctorfree/RoonCommandLine/blob/master/bin/play_genre_album"><strong>play_genre_album</strong></a>
 - Play album in genre</p>
 <p><a
-href="bin/play_genre_artist"><strong>play_genre_artist</strong></a> -
+href="https://github.com/doctorfree/RoonCommandLine/blob/master/bin/play_genre_artist"><strong>play_genre_artist</strong></a> -
 Play artist in genre</p>
-<p><a href="bin/play_genre"><strong>play_genre</strong></a> - Frontend
+<p><a href="https://github.com/doctorfree/RoonCommandLine/blob/master/bin/play_genre"><strong>play_genre</strong></a> - Frontend
 to play a specified genre</p>
-<p><a href="bin/play_playlist"><strong>play_playlist</strong></a> -
+<p><a href="https://github.com/doctorfree/RoonCommandLine/blob/master/bin/play_playlist"><strong>play_playlist</strong></a> -
 Frontend to play a specified playlist</p>
-<p><a href="bin/play_radio"><strong>play_radio</strong></a> - Frontend
+<p><a href="https://github.com/doctorfree/RoonCommandLine/blob/master/bin/play_radio"><strong>play_radio</strong></a> - Frontend
 for playing Live Radio in a Roon zone</p>
-<p><a href="bin/play_tag"><strong>play_tag</strong></a> - Frontend to
+<p><a href="https://github.com/doctorfree/RoonCommandLine/blob/master/bin/play_tag"><strong>play_tag</strong></a> - Frontend to
 play a specified tag</p>
-<p><a href="bin/list_albums"><strong>list_albums</strong></a> - Search
+<p><a href="https://github.com/doctorfree/RoonCommandLine/blob/master/bin/list_albums"><strong>list_albums</strong></a> - Search
 and list the available Albums in your Roon Library</p>
-<p><a href="bin/list_artists"><strong>list_artists</strong></a> - Search
+<p><a href="https://github.com/doctorfree/RoonCommandLine/blob/master/bin/list_artists"><strong>list_artists</strong></a> - Search
 and list the available Artists in your Roon Library</p>
 <p><a
-href="bin/list_artist_albums"><strong>list_artist_albums</strong></a> -
+href="https://github.com/doctorfree/RoonCommandLine/blob/master/bin/list_artist_albums"><strong>list_artist_albums</strong></a> -
 List albums by artist</p>
 <p><a
-href="bin/list_artist_tracks"><strong>list_artist_tracks</strong></a> -
+href="https://github.com/doctorfree/RoonCommandLine/blob/master/bin/list_artist_tracks"><strong>list_artist_tracks</strong></a> -
 List tracks by artist</p>
 <p><a
-href="bin/list_composer_albums"><strong>list_composer_albums</strong></a>
+href="https://github.com/doctorfree/RoonCommandLine/blob/master/bin/list_composer_albums"><strong>list_composer_albums</strong></a>
 - List albums by composer</p>
-<p><a href="bin/list_composers"><strong>list_composers</strong></a> -
+<p><a href="https://github.com/doctorfree/RoonCommandLine/blob/master/bin/list_composers"><strong>list_composers</strong></a> -
 List composers</p>
 <p><a
-href="bin/list_genre_albums"><strong>list_genre_albums</strong></a> -
+href="https://github.com/doctorfree/RoonCommandLine/blob/master/bin/list_genre_albums"><strong>list_genre_albums</strong></a> -
 List albums in genre</p>
 <p><a
-href="bin/list_genre_artists"><strong>list_genre_artists</strong></a> -
+href="https://github.com/doctorfree/RoonCommandLine/blob/master/bin/list_genre_artists"><strong>list_genre_artists</strong></a> -
 List artists in genre</p>
 <p><a
-href="bin/list_playlist_tracks"><strong>list_playlist_tracks</strong></a>
+href="https://github.com/doctorfree/RoonCommandLine/blob/master/bin/list_playlist_tracks"><strong>list_playlist_tracks</strong></a>
 - List tracks in playlist</p>
-<p><a href="bin/list_genres"><strong>list_genres</strong></a> - Search
+<p><a href="https://github.com/doctorfree/RoonCommandLine/blob/master/bin/list_genres"><strong>list_genres</strong></a> - Search
 and list the available Genres in your Roon Library</p>
-<p><a href="bin/list_playlists"><strong>list_playlists</strong></a> -
+<p><a href="https://github.com/doctorfree/RoonCommandLine/blob/master/bin/list_playlists"><strong>list_playlists</strong></a> -
 Search and list the available Roon Playlists</p>
-<p><a href="bin/list_radio"><strong>list_radio</strong></a> - Search and
+<p><a href="https://github.com/doctorfree/RoonCommandLine/blob/master/bin/list_radio"><strong>list_radio</strong></a> - Search and
 list the available Roon Live Radio Stations</p>
-<p><a href="bin/list_tags"><strong>list_tags</strong></a> - Search and
+<p><a href="https://github.com/doctorfree/RoonCommandLine/blob/master/bin/list_tags"><strong>list_tags</strong></a> - Search and
 list the available Roon Library tags</p>
-<p><a href="bin/list_zones"><strong>list_zones</strong></a> - List the
+<p><a href="https://github.com/doctorfree/RoonCommandLine/blob/master/bin/list_zones"><strong>list_zones</strong></a> - List the
 available Roon Zones</p>
-<p><a href="bin/now_playing"><strong>now_playing</strong></a> - Display
+<p><a href="https://github.com/doctorfree/RoonCommandLine/blob/master/bin/now_playing"><strong>now_playing</strong></a> - Display
 currently playing track in zone or all zones</p>
-<p><a href="bin/roon_fade"><strong>roon_fade</strong></a> -
+<p><a href="https://github.com/doctorfree/RoonCommandLine/blob/master/bin/roon_fade"><strong>roon_fade</strong></a> -
 Enable/disable volume fade out and fade in for tracks in zone</p>
-<p><a href="bin/set_volume"><strong>set_volume</strong></a> - Set the
+<p><a href="https://github.com/doctorfree/RoonCommandLine/blob/master/bin/set_volume"><strong>set_volume</strong></a> - Set the
 volume level of selected Roon Zone</p>
-<p><a href="bin/set_zone"><strong>set_zone</strong></a> - Set the Roon
+<p><a href="https://github.com/doctorfree/RoonCommandLine/blob/master/bin/set_zone"><strong>set_zone</strong></a> - Set the Roon
 Zone in which subsequent commands will run</p>
-<p><a href="bin/set_zone_group"><strong>set_zone_group</strong></a> -
+<p><a href="https://github.com/doctorfree/RoonCommandLine/blob/master/bin/set_zone_group"><strong>set_zone_group</strong></a> -
 Set one of the Roon Zone groupings specified in roon_api.ini</p>
-<p><a href="bin/zone_command"><strong>zone_command</strong></a> -
+<p><a href="https://github.com/doctorfree/RoonCommandLine/blob/master/bin/zone_command"><strong>zone_command</strong></a> -
 Frontend for commands to be issued in the selected Roon Zone (e.g. play,
 pause, pause_all, mute, mute_all, next track, previous track)</p>
-<p><a href="LICENSE"><strong>LICENSE</strong></a> - Apache License
+<p><a href="https://github.com/doctorfree/RoonCommandLine/blob/master/LICENSE"><strong>LICENSE</strong></a> - Apache License
 version 2.0</p>
-<p><a href="NOTICE"><strong>NOTICE</strong></a> - Copyright notice</p>
-<p><a href="Install"><strong>Install</strong></a> - Installation
+<p><a href="https://github.com/doctorfree/RoonCommandLine/blob/master/NOTICE"><strong>NOTICE</strong></a> - Copyright notice</p>
+<p><a href="https://github.com/doctorfree/RoonCommandLine/blob/master/Install"><strong>Install</strong></a> - Installation
 script</p>
-<p><a href="Uninstall"><strong>Uninstall</strong></a> - Removal
+<p><a href="https://github.com/doctorfree/RoonCommandLine/blob/master/Uninstall"><strong>Uninstall</strong></a> - Removal
 script</p>
-<p><a href="macInstall"><strong>macInstall</strong></a> - Installation
+<p><a href="https://github.com/doctorfree/RoonCommandLine/blob/master/macInstall"><strong>macInstall</strong></a> - Installation
 script for Mac OS (called from <code>Install</code>)</p>
-<p><a href="usage.txt"><strong>usage.txt</strong></a> - Frontend “roon”
+<p><a href="https://github.com/doctorfree/RoonCommandLine/blob/master/usage.txt"><strong>usage.txt</strong></a> - Frontend “roon”
 script usage documentation</p>
-<p><a href="api/README.md"><strong>api/</strong></a> - Python scripts to
+<p><a href="https://github.com/doctorfree/RoonCommandLine/blob/master/api/README.md"><strong>api/</strong></a> - Python scripts to
 call the Roon API with appropriate arguments</p>
-<p><a href="patches/README.md"><strong>patches/</strong></a> - Patches
+<p><a href="https://github.com/doctorfree/RoonCommandLine/blob/master/patches/README.md"><strong>patches/</strong></a> - Patches
 to the Python Roon API to extend its capabilities</p>
 <h2 id="connect">Connect</h2>
 <p><a
