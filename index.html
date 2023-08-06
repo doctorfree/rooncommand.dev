@@ -2,7 +2,912 @@
 layout: page
 ---
 
-<p>Demo website</p>
+<h2 id="table-of-contents">Table of contents</h2>
+<details>
+  <summary>
+    <strong>Click here to expand/collapse</strong>
+  </summary>
+<ol type="1">
+<li><a href="#overview">Overview</a></li>
+<li><a href="#requirements">Requirements</a></li>
+<li><a href="#installation">Installation</a>
+<ol type="1">
+<li><a href="#debian-package-installation">Debian Package
+installation</a></li>
+<li><a href="#rpm-package-installation">RPM Package
+installation</a></li>
+<li><a href="#scripted-linux-installation">Scripted Linux
+installation</a></li>
+<li><a href="#mac-os-x-installation">Mac OS X installation</a></li>
+<li><a href="#post-installation-configuration">Post installation
+configuration</a>
+<ol type="1">
+<li><a href="#zone-groupings-and-defaults">Zone groupings and
+defaults</a></li>
+<li><a href="#ssh-public-key-authentication">SSH public key
+authentication</a></li>
+</ol></li>
+<li><a href="#manual-installation">Manual installation</a></li>
+</ol></li>
+<li><a href="#upgrades">Upgrades</a></li>
+<li><a href="#remote-deployment">Remote deployment</a>
+<ol type="1">
+<li><a href="#rooncommandline-light-deployment">RoonCommandLine Light
+deployment</a></li>
+</ol></li>
+<li><a href="#removal">Removal</a></li>
+<li><a href="#documentation">Documentation</a></li>
+<li><a href="#screenshots">Screenshots</a></li>
+<li><a href="#troubleshooting">Troubleshooting</a></li>
+<li><a href="#usage">Usage</a>
+<ol type="1">
+<li><a href="#introduction-to-using-the-command-line">Introduction to
+Using the Command Line</a></li>
+<li><a href="#voice-activated-roon-control">Voice Activated Roon
+Control</a>
+<ol type="1">
+<li><a href="#roon-voice-commands-with-siri">Roon Voice Commands with
+Siri</a></li>
+<li><a href="#roon-voice-commands-with-ga">Roon Voice Commands with
+Google Assistant</a></li>
+</ol></li>
+</ol></li>
+<li><a href="#motivation">Motivation</a>
+<ol type="1">
+<li><a href="#why-would-i-need-or-want-command-line-control-of-roon">Why
+would I need or want command line control of Roon</a></li>
+<li><a href="#applications">Applications</a></li>
+<li><a href="#history">History</a></li>
+</ol></li>
+<li><a href="#contents">Contents</a></li>
+</ol>
+</details>
+<h2 id="overview">Overview</h2>
+<p>The Roon Command Line project provides Bash and Python scripts to
+enable command line control of the Roon audio system over a local
+network.</p>
+<p><strong>Note:</strong> No modifications are made to the Roon Core.
+The RoonCommandLine package resides entirely on other systems within
+your local area network.</p>
+<p>Currently the command line Roon control scripts provide support
+for:</p>
+<ul>
+<li>Play album by album name</li>
+<li>Play artist name</li>
+<li>Play genre</li>
+<li>Play playlist by playlist name</li>
+<li>Play tag</li>
+<li>Play Roon Radio</li>
+<li>Play named album by specified artist</li>
+<li>Play named track by specified artist</li>
+<li>Play composer</li>
+<li>Play named album by specified composer</li>
+<li>Play named album in specified genre</li>
+<li>Play named artist in specified genre</li>
+<li>Issue one of the following commands in the specified zone
+<ul>
+<li>group</li>
+<li>ungroup</li>
+<li>play</li>
+<li>play_all</li>
+<li>pause</li>
+<li>pause_all</li>
+<li>playpause</li>
+<li>stop</li>
+<li>stop_all</li>
+<li>next</li>
+<li>previous</li>
+<li>mute (toggle muted/unmuted in selected zone or zone grouping)</li>
+<li>mute_all (toggle muted/unmuted in all zones)</li>
+<li>shuffle (toggle shuffle/unshuffle zone playback)</li>
+<li>repeat (toggle loop/unlooped zone playback)</li>
+</ul></li>
+<li>Get zone information and settings</li>
+<li>Get track/artist/album now playing in specified zone or all
+zones</li>
+<li>List albums, artists, albums by artist, tracks by artist, albums by
+composer, composers, albums by genre, artists by genre, genres,
+playlists, live radio stations, tags, and Roon zones</li>
+<li>Set the default Roon output zone</li>
+<li>Set the volume level in a specified Roon zone or zone grouping</li>
+<li>Select Roon audio zone or zone grouping</li>
+<li>Enable/disable track fade out and fade in</li>
+</ul>
+<p>In addition, search capabilities have been added to the scripts with
+partial matching facilities. Thus a substring can be supplied to use as
+a search term with partial matching returning albums, artists,
+playlists, genres, or tags which contain the specified substring (case
+sensitive). The special search term <code>__all__</code> indicates match
+all albums, artists, playlists, genres, or tags.</p>
+<p>All commands and playback can target a specified Roon output
+zone.</p>
+<p>Additional detail and info can be found in the <a
+href="https://github.com/doctorfree/RoonCommandLine/-/wikis/home">RoonCommandLine
+Wiki</a>.</p>
+<p>Command line control of Roon may be of particular interest to Roon
+users running a <a
+href="https://help.roonlabs.com/portal/en/kb/articles/roonbridge">Roon
+Bridge</a> or <a
+href="https://help.roonlabs.com/portal/en/kb/articles/roon-server#What_is_Roon_Server">Roon
+Server</a> where there is no Roon client present on that system to
+control Roon. However, command line control of Roon can provide
+significant benefit to Roon users in any environment or deployment. See
+the section below, <a
+href="#why-would-i-need-or-want-command-line-control-of-roon">Why would
+I need or want command line control of Roon</a>, for a closer look at
+possible motivation for command line control of Roon.</p>
+<h2 id="requirements">Requirements</h2>
+<p>RoonCommandLine can be installed on either Linux or Mac OS X systems.
+It requires a <a href="https://roonlabs.com/">Roon Core System</a>
+reachable on the local network, <a
+href="https://en.wikipedia.org/wiki/Bash_(Unix_shell)">Bash</a>, <a
+href="https://www.python.org/">Python 3</a>, and the <a
+href="https://github.com/pavoni/pyroon">Python Roon API</a>. The Python
+Roon API will be installed as part of the RoonCommandLine installation
+process.</p>
+<p>Ensure that a Roon Core System is running on the local area network
+and Python 3 is installed on the Linux or Mac on which you wish to
+install the RoonCommandLine package. Most modern Linux systems will have
+Python 3 already installed. A good guide for installing Python 3 on Mac
+OS X can be found at
+https://docs.python-guide.org/starting/install3/osx/ and on Linux at
+https://docs.python-guide.org/starting/install3/linux/</p>
+<h2 id="installation">Installation</h2>
+See the
+<a href="https://rooncommand.dev/install">RoonCommandLine Install section</a>
+for details on installing RoonCommandLine.
+<h2 id="upgrades">Upgrades</h2>
+<p>If you are upgrading from a previous version of RoonCommandLine,
+starting with Version 2.0.5, customizations made to
+<code>/usr/local/Roon/etc/roon_api.ini</code> will be preserved.
+Unfortunately, upgrading from versions prior to 2.0.5 will not preserve
+those customizations without some manual effort.</p>
+<p>If you are upgrading from 2.0.4 or earlier it will be necessary to
+either:</p>
+<ul>
+<li>Backup <code>roon_api.ini</code> and reapply your customizations to
+the newly installed <code>roon_api.ini</code></li>
+</ul>
+<p>or</p>
+<ul>
+<li>Prior to applying the upgrade, copy <code>roon_api.ini</code> to
+<code>/tmp/_roon_api_ini_.save</code></li>
+</ul>
+<p>The latter, copying <code>roon_api.ini</code> to
+<code>/tmp/_roon_api_ini_.save</code>, allows the upgrade to
+automatically preserve your customizations.</p>
+<p>If you are upgrading from 2.0.5 or later this should not be necessary
+but a backup prior to upgrading is recommended anyway.</p>
+<h2 id="remote-deployment">Remote deployment</h2>
+<p>Recommended deployment of the RoonCommandLine package is to install
+the entire package on every system from which you wish to execute Roon
+control commands. This deployment ensures you have all commands
+available without the need to configure SSH public key authentication.
+If you install the entire package on every system you wish to use for
+Roon command line control then you can disregard the following
+instructions on “RoonCommandLine Light” deployment.</p>
+<h3 id="rooncommandline-light-deployment">RoonCommandLine Light
+deployment</h3>
+<p>Not all systems satisfy the RoonCommandLine requirement of Python 3
+and Pip. On those systems that do not satisfy the Python/Pip requirement
+it is possible to install just the <code>roon</code> command and
+RoonCommandLine configuration files.</p>
+<p>After copying /usr/local/bin/roon and the /usr/local/Roon/etc/
+directory to the target system on which you wish to run Roon commands,
+perform the following setup:</p>
+<div class="sourceCode" id="cb11"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> mkdir <span class="at">-p</span> /usr/local/bin</span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> cp roon /usr/local/bin/roon</span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> chmod 755 /usr/local/bin/roon</span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Edit the `server` and `user` settings near the top of the script</span></span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> vi /usr/local/bin/roon</span>
+<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> mkdir /usr/local/Roon</span>
+<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> mkdir /usr/local/Roon/etc</span>
+<span id="cb11-8"><a href="#cb11-8" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> cp etc/pyroonconf /usr/local/Roon/etc/pyroonconf</span>
+<span id="cb11-9"><a href="#cb11-9" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> cp etc/roon_api.ini /usr/local/Roon/etc/roon_api.ini</span>
+<span id="cb11-10"><a href="#cb11-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Make the RoonCommandLine configuration directory writeable by your user</span></span>
+<span id="cb11-11"><a href="#cb11-11" aria-hidden="true" tabindex="-1"></a><span class="va">USER</span><span class="op">=</span><span class="kw">`</span><span class="fu">id</span> <span class="at">-u</span> <span class="at">-n</span><span class="kw">`</span></span>
+<span id="cb11-12"><a href="#cb11-12" aria-hidden="true" tabindex="-1"></a><span class="va">GROUP</span><span class="op">=</span><span class="kw">`</span><span class="fu">id</span> <span class="at">-g</span> <span class="at">-n</span><span class="kw">`</span></span>
+<span id="cb11-13"><a href="#cb11-13" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> chown <span class="at">-R</span> <span class="va">${USER}</span>:<span class="va">${GROUP}</span> /usr/local/Roon/etc</span>
+<span id="cb11-14"><a href="#cb11-14" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> chmod 755 /usr/local/Roon/etc</span>
+<span id="cb11-15"><a href="#cb11-15" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> chmod 644 /usr/local/Roon/etc/<span class="pp">*</span></span></code></pre></div>
+<p><strong>Note</strong> A “RoonCommandLine Light” deployment of this
+nature not only requires significant manual setup but will also require
+the configuration of SSH public key authentication between the target
+system and a system on which the RoonCommandLine package was installed.
+For this reason, it is recommended that deployments install the entire
+package on every system, eliminating the need for extensive manual
+configuration and SSH public key authentication.</p>
+<h2 id="removal">Removal</h2>
+<p>On Debian based Linux systems where the RoonCommandLine package was
+installed using the RoonCommandLine Debian format package, remove the
+RoonCommandLine package by executing the command:</p>
+<div class="sourceCode" id="cb12"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>    <span class="fu">sudo</span> apt remove rooncommandline</span></code></pre></div>
+<p>or</p>
+<div class="sourceCode" id="cb13"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>    <span class="fu">sudo</span> dpkg <span class="at">-r</span> rooncommandline</span></code></pre></div>
+<p>On RPM based Linux systems where the RoonCommandLine package was
+installed using the RoonCommandLine RPM format package, remove the
+RoonCommandLine package by executing the command:</p>
+<div class="sourceCode" id="cb14"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>    <span class="fu">sudo</span> yum remove RoonCommandLine</span></code></pre></div>
+<p>or</p>
+<div class="sourceCode" id="cb15"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>    <span class="fu">sudo</span> rpm <span class="at">-e</span> RoonCommandLine</span></code></pre></div>
+<p>On Mac OS X systems, the RoonCommandLine scripts, patches, and
+configuration can be removed by executing the “Uninstall” script in the
+RoonCommandLine source directory:</p>
+<div class="sourceCode" id="cb16"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>    <span class="fu">git</span> clone git@github.com:doctorfree/RoonCommandLine.git</span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>    <span class="bu">cd</span> RoonCommandLine</span>
+<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>    <span class="ex">./Uninstall</span></span></code></pre></div>
+<h2 id="documentation">Documentation</h2>
+<p>All RoonCommandLine commands have manual pages. Execute
+<code>man &lt;command-name&gt;</code> to view the manual page for a
+command. The <code>roon</code> frontend is the primary user interface
+for the RoonCommandLine commands and the manual page for
+<code>roon</code> can be viewed with the command <code>man roon</code>.
+Most commands also have help/usage messages that can be viewed with the
+<strong>-u</strong> argument option, e.g. <code>roon -u</code>.</p>
+<p>The manual page for the primary RoonCommandLine user interface,
+<code>roon</code>, can be viewed by issueing the command:</p>
+<ul>
+<li><code>man roon</code></li>
+</ul>
+<p>Manual pages for each RoonCommandLine backend command can be viewed
+by issueing any of the following commands:</p>
+<ul>
+<li><a
+href="https://github.com/doctorfree/RoonCommandLine/-/blob/master/markdown/clone_pyroon.1.md">man
+clone_pyroon</a></li>
+<li><a
+href="https://github.com/doctorfree/RoonCommandLine/-/blob/master/markdown/get_core_ip.1.md">man
+get_core_ip</a></li>
+<li><a
+href="https://github.com/doctorfree/RoonCommandLine/-/blob/master/markdown/get_zone_info.1.md">man
+get_zone_info</a></li>
+<li><a
+href="https://github.com/doctorfree/RoonCommandLine/-/blob/master/markdown/get_zones.1.md">man
+get_zones</a></li>
+<li><a
+href="https://github.com/doctorfree/RoonCommandLine/-/blob/master/markdown/get_zone_remaining.1.md">man
+get_zone_remaining</a></li>
+<li><a
+href="https://github.com/doctorfree/RoonCommandLine/-/blob/master/markdown/get_zone_volume.1.md">man
+get_zone_volume</a></li>
+<li><a
+href="https://github.com/doctorfree/RoonCommandLine/-/blob/master/markdown/list_albums.1.md">man
+list_albums</a></li>
+<li><a
+href="https://github.com/doctorfree/RoonCommandLine/-/blob/master/markdown/list_artists.1.md">man
+list_artists</a></li>
+<li><a
+href="https://github.com/doctorfree/RoonCommandLine/-/blob/master/markdown/list_artist_albums.1.md">man
+list_artist_albums</a></li>
+<li><a
+href="https://github.com/doctorfree/RoonCommandLine/-/blob/master/markdown/list_artist_tracks.1.md">man
+list_artist_tracks</a></li>
+<li><a
+href="https://github.com/doctorfree/RoonCommandLine/-/blob/master/markdown/list_composer_albums.1.md">man
+list_composer_albums</a></li>
+<li><a
+href="https://github.com/doctorfree/RoonCommandLine/-/blob/master/markdown/list_composers.1.md">man
+list_composers</a></li>
+<li><a
+href="https://github.com/doctorfree/RoonCommandLine/-/blob/master/markdown/list_genre_albums.1.md">man
+list_genre_albums</a></li>
+<li><a
+href="https://github.com/doctorfree/RoonCommandLine/-/blob/master/markdown/list_genre_artists.1.md">man
+list_genre_artists</a></li>
+<li><a
+href="https://github.com/doctorfree/RoonCommandLine/-/blob/master/markdown/list_playlist_tracks.1.md">man
+list_playlist_tracks</a></li>
+<li><a
+href="https://github.com/doctorfree/RoonCommandLine/-/blob/master/markdown/list_genres.1.md">man
+list_genres</a></li>
+<li><a
+href="https://github.com/doctorfree/RoonCommandLine/-/blob/master/markdown/list_playlists.1.md">man
+list_playlists</a></li>
+<li><a
+href="https://github.com/doctorfree/RoonCommandLine/-/blob/master/markdown/list_radio.1.md">man
+list_radio</a></li>
+<li><a
+href="https://github.com/doctorfree/RoonCommandLine/-/blob/master/markdown/list_tags.1.md">man
+list_tags</a></li>
+<li><a
+href="https://github.com/doctorfree/RoonCommandLine/-/blob/master/markdown/list_zones.1.md">man
+list_zones</a></li>
+<li><a
+href="https://github.com/doctorfree/RoonCommandLine/-/blob/master/markdown/now_playing.1.md">man
+now_playing</a></li>
+<li><a
+href="https://github.com/doctorfree/RoonCommandLine/-/blob/master/markdown/play_album.1.md">man
+play_album</a></li>
+<li><a
+href="https://github.com/doctorfree/RoonCommandLine/-/blob/master/markdown/play_artist.1.md">man
+play_artist</a></li>
+<li><a
+href="https://github.com/doctorfree/RoonCommandLine/-/blob/master/markdown/play_artist_album.1.md">man
+play_artist_album</a></li>
+<li><a
+href="https://github.com/doctorfree/RoonCommandLine/-/blob/master/markdown/play_artist_track.1.md">man
+play_artist_track</a></li>
+<li><a
+href="https://github.com/doctorfree/RoonCommandLine/-/blob/master/markdown/play_composer.1.md">man
+play_composer</a></li>
+<li><a
+href="https://github.com/doctorfree/RoonCommandLine/-/blob/master/markdown/play_composer_album.1.md">man
+play_composer_album</a></li>
+<li><a
+href="https://github.com/doctorfree/RoonCommandLine/-/blob/master/markdown/play_genre_album.1.md">man
+play_genre_album</a></li>
+<li><a
+href="https://github.com/doctorfree/RoonCommandLine/-/blob/master/markdown/play_genre_artist.1.md">man
+play_genre_artist</a></li>
+<li><a
+href="https://github.com/doctorfree/RoonCommandLine/-/blob/master/markdown/play_genre.1.md">man
+play_genre</a></li>
+<li><a
+href="https://github.com/doctorfree/RoonCommandLine/-/blob/master/markdown/play_playlist.1.md">man
+play_playlist</a></li>
+<li><a
+href="https://github.com/doctorfree/RoonCommandLine/-/blob/master/markdown/play_radio.1.md">man
+play_radio</a></li>
+<li><a
+href="https://github.com/doctorfree/RoonCommandLine/-/blob/master/markdown/play_tag.1.md">man
+play_tag</a></li>
+<li><a
+href="https://github.com/doctorfree/RoonCommandLine/-/blob/master/markdown/roon_fade.1.md">man
+roon_fade</a></li>
+<li><a
+href="https://github.com/doctorfree/RoonCommandLine/-/blob/master/markdown/roon_faded.5.md">man
+roon_faded</a></li>
+<li><a
+href="https://github.com/doctorfree/RoonCommandLine/-/blob/master/markdown/set_volume.1.md">man
+set_volume</a></li>
+<li><a
+href="https://github.com/doctorfree/RoonCommandLine/-/blob/master/markdown/set_zone.1.md">man
+set_zone</a></li>
+<li><a
+href="https://github.com/doctorfree/RoonCommandLine/-/blob/master/markdown/set_zone_group.1.md">man
+set_zone_group</a></li>
+<li><a
+href="https://github.com/doctorfree/RoonCommandLine/-/blob/master/markdown/zone_command.1.md">man
+zone_command</a></li>
+</ul>
+<h2 id="screenshots">Screenshots</h2>
+<p>Roon_List_Artist_Tracks.png: 1354 x 409 Roon_Play_Artist_Track.png:
+1349 x 488 Roon_Set_Zone.png: 800 x 585 Roon_UI.png: 800 x 557</p>
+<p float="left">
+List tracks containing “Satin” by Artists containing “Moody”<br/>
+<img src="screenshots/Roon_List_Artist_Tracks.png" style="width:800px;height:350px;">
+Play first track containing “Satin” by Artists containing “Moody”<br/>
+<img src="screenshots/Roon_Play_Artist_Track.png" style="width:800px;height:350px;">
+</p>
+<p float="left">
+Interactive menus when invoked with no arguments<br/>
+<img src="screenshots/Roon_UI.png" style="width:800px;height:600px;">
+<img src="screenshots/Roon_Set_Zone.png" style="width:800px;height:600px;">
+</p>
+<h2 id="troubleshooting">Troubleshooting</h2>
+<p>The most common difficulty encountered during initial setup of the
+Roon Command Line package is the configuration of public key
+authentication in SSH. This allows the “roon” command on your systems to
+execute Roon Command Line commands remotely without the need to enter
+credentials. There are many guides available on the Internet that
+provide instructions on configuring public key SSH authentication. For
+instance, see
+https://www.ssh.com/academy/ssh/command#configuring-public-key-authentication
+or
+https://serverpilot.io/docs/how-to-use-ssh-public-key-authentication/</p>
+<p>Also, make sure the SSH service is running on the Python Roon API
+system. Alternatively, install both the roon command and the Python Roon
+API on the same system and run the roon commands locally, avoiding the
+need for SSH. To enable local execution of the roon command line tools,
+issue the command:</p>
+<pre><code>`roon -L`</code></pre>
+<p>In some cases the initial installation may fail to configure the
+system properly. The Roon Command Line install creates two configuration
+files:</p>
+<pre><code>`/usr/local/Roon/etc/pyroonconf`</code></pre>
+<p>and</p>
+<pre><code>`/usr/local/Roon/etc/roon_api.ini`</code></pre>
+<p>These two configuration files are the first place to look when you
+encounter an issue. The /usr/local/Roon/etc/pyroonconf file contains 3
+settings:</p>
+<pre><code>- The path to the Python User Base folder where the Python Roon API dist-packages
+  directory is located
+- A variable used to determine if the Python Roon API patch has been applied
+- The currently active Roon Zone name used by the Roon Commmand Line</code></pre>
+<p>The /usr/local/Roon/etc/roon_api.ini file contains default values for
+album name, artist, genre, playlist, tag, and zone as well as the name
+of a file that contains a token used to authenticate with the Roon Core
+and the Roon Core IP address. Verify the settings in roon_api.ini are
+valid and correct. The most common issue will be an incorrect Roon Core
+IP address setting. You can verify this address is correct by comparing
+it to the value displayed in your Roon Remote window at</p>
+<pre><code>`Settings -&gt; General`</code></pre>
+<p>under “ROON CORE”.</p>
+<p>Much of the Roon Command Line setup is automatically configured
+during the execution of the ./Install script. If you have some expertise
+in Bash scripting you can examine this script to see what commands were
+issued.</p>
+<p>Another area that may be causing problems is the installation of the
+Python Roon API package and its ability to communicate with your Roon
+Core. To debug problems I have found it useful to SSH in to the system
+running the Python Roon API package and run commands by hand there. For
+example, rather than running “roon -l zones” command which remotely runs
+the list_zones command, SSH in as the configured user and run:</p>
+<div class="sourceCode" id="cb22"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a>    <span class="bu">cd</span> /usr/local/Roon/api</span>
+<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a>    <span class="ex">python</span> list_zones.py <span class="at">-z</span> all</span></code></pre></div>
+<p>This eliminates SSH and remote execution as well as the intermediate
+shell script used to execute the python script. Similar python commands
+can be issued directly on the Python Roon API system in the
+/usr/local/Roon/api directory.</p>
+<p>Verify that the “roon” frontend command shell script has been
+configured properly. Open the roon shell script in an editor and find
+the two lines near the top of the file that set the “server” and “user”
+shell variables. Verify that the “server” variable is set to the correct
+IP address of the Python Roon API server and that the “user” variable is
+set to the username used in the SSH commands to execute the Python
+commands on the Python Roon API server. These should have been set for
+you automatically during the installation process but may have been
+misconfigured.</p>
+<h2 id="usage">Usage</h2>
+<p><strong>Note:</strong> The first time you execute the
+<code>roon</code> command you may have to enable the Python Roon API
+extension by clicking “Settings” -&gt; “Extensions” -&gt; “Enable” in a
+Roon Remote client window. On most systems this will not be necessary as
+this was performed during initial installation.</p>
+<p>The Python Roon API scripts must be installed on a system that is on
+the same local network as the Roon Core. The <code>roon</code> shell
+script is the primary user interface. It accepts a wide variety of
+arguments and sends a command to the Python Roon API system which then
+communicates with the Roon Core.</p>
+<p>If no arguments are provided to the <code>roon</code> command then an
+interactive dialog is presented from which the user can select commands
+and queries.</p>
+<p>Here is the current output of “roon -u” which displays a usage
+message.</p>
+<pre><code>Usage: roon -A album -a artist -C composer -f [on|onlog|off|status] -g genre -G zone_group -i
+    -l [albums|artists|artalbums|arttracks|composers|comalbums|genres|genalbums|genartists|playlists|playtracks|tags|zones]
+    -c [group|ungroup|play|play_all|pause|pause_all|stop|stop_all|next|previous|shuffle|repeat|mute|mute_all]
+    -s search -p playlist -T track -t tag -z zone -L -S -r radio
+    -X ex_album -x ex_artist [-EuU]
+Where:
+    -A album selects an album to play
+    -a artist selects an artist to list/play
+    -C composer selects a composer to play
+    -g genre selects a genre to list/play
+    -i displays zone information (combine with &#39;-z zone&#39; for extended
+        info on a specified zone, otherwise display info on all zones)
+    -f [on|onlog|off|status] enables/disables fading/logging in specified zone
+        &#39;on&#39; enables fading, &#39;onlog&#39; fading and logging, &#39;off&#39; disables fading
+        (combine with &#39;-z zone&#39; for &#39;fading&#39; in that zone)
+    -n displays &#39;now playing&#39; information for zones actively playing
+    -N displays &#39;now playing&#39; information for all zones
+        (combine with &#39;-z zone&#39; for &#39;now playing&#39; in only that zone)
+    -p playlist selects a playlist to play
+    -G zone_group specifies a zone grouping specified in roon_api.ini
+    -L setup roon to execute local commands rather than remote via SSH
+    -S Set Roon defaults in roon_api.ini
+    -l [albums|artists|artalbums|arttracks|composers|comalbums|genres|genalbums|genartists|playlists|playtracks|tags|zones]
+        indicates list albums, artists, albums by artist, composers, albums by composers, genres, albums in genre, artists in genre, playlists, tags, or Roon zones
+    -r radio selects a live radio stream to play
+    -s search specifies a term to search for in the lists retrieved with -l
+    -T track specifies a track to play
+    -t tag selects an tag to play
+    -z zone selects the Roon Zone in which to play
+    -c [group|ungroup|play|play_all|pause|pause_all|playpause|stop|stop_all|next|previous|shuffle|repeat|mute|mute_all]
+        issues the command in the selected zone
+        &#39;mute&#39; toggles the zone&#39;s muted or unmuted state
+        &#39;mute_all&#39; toggles all zones&#39; muted or unmuted state
+        &#39;pause_all&#39; pauses playback in all zones
+        &#39;play_all&#39; begins playback in all zones
+        &#39;stop_all&#39; stops playback in all zones and releases devices
+        &#39;shuffle&#39; toggles the zone&#39;s shuffled or unshuffled setting
+        &#39;repeat&#39; toggles the zone&#39;s looping or non-looping setting
+    -v volume sets the volume level in the selected zone
+        The volume argument has the format [g:][r:][s:]num
+        Where &#39;g&#39; indicates set volume for all zones in the group
+        &#39;r&#39; specifies use relative method volume setting
+        &#39;s&#39; specifies use relative_step method volume setting
+        &#39;num&#39; can be absolute, relative, and negative or positive
+    -X ex_album specifies a string to exclude from album/genre names
+    -x ex_artist specifies a string to exclude from artist/composer/playlist names
+    -u displays a full usage message with examples
+    -U displays a usage message without examples
+    -E displays examples with no usage message
+Combine &#39;-a artist&#39; and &#39;-A album&#39; to play an album by a specified artist
+Combine &#39;-a artist&#39; and &#39;-T track&#39; to play a track by a specified artist
+Combine &#39;-a artist&#39; or &#39;-A album&#39; with &#39;-g genre&#39; to play an artist or album in a specified genre
+
+Special search term __all__ matches all entries
+Special name default plays the default setting in roon_api.ini
+
+Example invocations
+    Play artist:
+        roon -a &quot;Deep Purple&quot;
+    Play album by artist:
+        roon -a &quot;Deep Purple&quot; -A Burn
+    Play track by artist:
+        roon -a &quot;Aretha Franklin&quot; -T Think
+    Play artist in specified zone:
+        roon -a &quot;Jethro Tull&quot; -z &quot;Mac Pro DAC&quot;
+    Play genre:
+        roon -g Classical
+    Play default live radio:
+        roon -r default
+    Play playlist:
+        roon -p &quot;Bowie Favs&quot;
+    Play next track:
+        roon -c next
+    Stop play in specified zone:
+        roon -c stop -z Kitchen
+    Mute/Unmute a specified zone:
+        roon -c mute -z &quot;Mac Pro DAC&quot;
+    Mute/Unmute all zones:
+        roon -c mute_all
+    List all playlists containing the string &#39;Best&#39;:
+        roon -l playlists -s Best
+    List albums by artist:
+        roon -l artalbums -a &quot;Deep Purple&quot;
+    List artists containing the string &#39;Will&#39; in the &#39;Country&#39; genre:
+        roon -l genartists -a Will -g Country
+    List albums containing the string &#39;Magic&#39; in the &#39;Rock&#39; genre:
+        roon -l genalbums -A Magic -g Rock
+    Play artist containing the string &#39;Willie&#39; in the &#39;Country&#39; genre:
+        roon -a Willie -g Country
+    Play album containing the string &#39;Magic&#39; in the &#39;Rock&#39; genre:
+        roon -A Magic -g Rock
+    Group the zones listed in roon_api.ini Group_foobar:
+        roon -G foobar -c group
+    Set the volume level to 50 in the currently active zone
+        roon -v 50
+    Decrease the volume level by 10 in the currently active zone
+        roon -v r:-10
+    Set the volume level to 40 in all zones grouped with the zone named &#39;Mac Pro DAC&#39;
+        roon -v g:40 -z &#39;Mac Pro DAC&#39;
+    Increase the volume level by 20 in all zones grouped with the zone named &#39;Mac Pro DAC&#39;
+        roon -v g:r:20 -z &#39;Mac Pro DAC&#39;
+    Get info on all Roon zones
+        roon -i
+    Get extended info on Roon zone named &#39;Mac Pro DAC&#39;
+        roon -i -z &#39;Mac Pro DAC&#39;
+    Get now playing info on all zones regardless of state
+        roon -N
+    Get now playing info on all zones actively playing
+        roon -n
+    Get now playing info on Roon zone named &#39;Mac Pro DAC&#39;
+        roon -n -z &#39;Mac Pro DAC&#39;
+    Enable volume fading in default Roon zone
+        roon -f on
+    Disable volume fading in default Roon zone
+        roon -f off
+    NOTE: Use quotes to specify media names which contain spaces.
+    For example, to play the album &#39;Love Bomb&#39;:
+        roon -A &quot;Love Bomb&quot;</code></pre>
+<p>When playing media from the command line it is possible to specify a
+substring with which a partial match can be made. In order to play
+media, either the full name of the desired media or enough of a
+substring to uniquely match should be supplied. This applies to playing
+an album, artist, composer, genre, playlist, or tag. For example, the
+command “roon -a Tull” would play media by artist “Jethro Tull” unless
+there were multiple artist name matches to the substring “Tull”. All
+partial matching is case sensitive - “roon -a tull” would not match
+“Jethro Tull”.</p>
+<p>If multiple matches are found, the first match in the list is played.
+To narrow a search, exclusion filtering can be performed. Use the
+<code>-x string</code> argument to specify an exclusion substring for
+artist, composer, and playlist library searches. Use the
+<code>-X string</code> argument to specify an exclusion substring for
+album and genre library searches.</p>
+<p>In a large Roon library where multiple matches may be frequent and
+large, one approach is to first list the media you wish to play and
+based on the list of matches returned construct exclusion arguments that
+narrow the matches to a list whose first element is the media you wish
+to play. For example:</p>
+<p><code>roon -l genalbums -g Classical -A Mozart</code></p>
+<p>might return the following:</p>
+<p>Albums in Classical genre with Mozart in name :</p>
+<p>Berliner Philharmoniker plays Mozart Bruch: Violin Concerto No. 1,
+Op. 26 - Mozart: Violin Concerto No. 1, K. 207 Mozart: Concertos For Two
+Pianos K 242 &amp; 365; Kozeluch: Four Hands Piano Concerto Mozart -
+Great Recordings Resonances (Mozart, Berg, Liszt, Bartok, Gluck)</p>
+<p>If you tried to play media using these arguments then the first in
+the list would be played - “Berliner Philharmoniker plays Mozart”. But
+you want to play the second one performed byy Bruch. This can be
+accomplished either by modifying the album search term or by using an
+album exclusion filter:</p>
+<p><code>roon -l genalbums -g Classical -A Mozart -X Berliner</code></p>
+<p>would list the “Violin Concerto No. 1, Op. 26” by Mozart fist.
+Alternately,</p>
+<p><code>roon -l genalbums -g Classical -A "Mozart: Violin"</code></p>
+<p>would also list the concerto first. Another search route for this
+album would be by searching albums by composer rather than albums by
+genre:</p>
+<p><code>roon -l comalbums -C Mozart -A "Violin Concerto"</code></p>
+<p>Listing/playing media in the Roon Library “Composers” category
+searches the entire Roon database of available Composers rather than
+limiting the search to the albums or artists etc in your library. This
+opens up a pretty wide search field of composers and their works.</p>
+<p>Finally, to play the media you have located using one of the listing
+techniques described above, simply re-run the same command used to list
+the media only remove the <code>-l &lt;listingtype&gt;</code> arguments.
+For example, if the listing command:</p>
+<p><code>roon -l genalbums -g Classical -A Mozart -X Berliner</code></p>
+<p>produced a search result to your liking and you now wish to play the
+first entry in that returned list, remove the <code>-l genalbums</code>
+argument and re-run the command:</p>
+<p><code>roon -g Classical -A Mozart -X Berliner</code></p>
+<p>Any listing command can be turned into a play command in a similar
+manner.</p>
+<h3 id="introduction-to-using-the-command-line">Introduction to Using
+the Command Line</h3>
+<p>The command line has a long and storied history in computing. Read
+some of that history, learn how to open a command line terminal window
+on various systems, how to get started using the command line, and see
+some examples of why the command line interface is so powerful by
+reading the RoonCommandLine wiki article <a
+href="https://github.com/doctorfree/RoonCommandLine/-/wikis/Introduction-to-Using-the-Command-Line">Introduction
+to Using the Command Line</a>.</p>
+<p>This introduction to the command line includes an example of how to
+automate playback of Roon playlists in specified Roon zones at
+designated times of day.</p>
+<h3 id="voice-activated-roon-control">Voice Activated Roon Control</h3>
+<p>RoonCommandLine can be used to provide a command line interface for
+the remote execution of commands via SSH or other facilities such as
+Google Assistant. In this way, voice control of Roon can be implemented
+on mobile devices or other “smart” devices. Example implementations
+using Apple Siri and Google Assistant are described in the following
+RoonCommandLine Wiki articles.</p>
+<h4 id="roon-voice-commands-with-siri">Roon Voice Commands with
+Siri</h4>
+<p>The RoonCommandLine Wiki article <a
+href="https://github.com/doctorfree/RoonCommandLine/-/wikis/Roon-Voice-Commands-with-Siri">“Roon
+Voice Commands with Siri”</a> describes in detail how to setup Roon
+voice commands using Apple Shortcuts on an iOS device. This method
+utilizes Siri to recognize the voice commands and run the Shortcut which
+uses SSH to execute the command.</p>
+<h4 id="roon-voice-commands-with-google-assistant">Roon Voice Commands
+with Google Assistant</h4>
+<p>The RoonCommandLine Wiki article <a
+href="https://github.com/doctorfree/RoonCommandLine/-/wikis/Roon-Voice-Commands-with-GA">“Roon
+Voice Commands with Google Assistant”</a> describes in detail how to
+setup Roon voice commands using the <a
+href="http://wiki.bugsounet.fr/en/MMM-GoogleAssistant">MMM-GoogleAssistant</a>
+and <a href="http://wiki.bugsounet.fr/en/MMM-Detector">MMM-Detector</a>
+modules on a <a href="https://magicmirror.builders/">MagicMirror</a>.
+This method utilizes Google Assistant recipes to control Roon with voice
+commands.</p>
+<h2 id="motivation">Motivation</h2>
+<h3 id="why-would-i-need-or-want-command-line-control-of-roon">Why would
+I need or want command line control of Roon</h3>
+<p>One might reasonably ask “Why would I need or want command line
+control of my Roon audio system”? Truth be told, most Roon users do not
+need or want command line control of Roon or any other software. They
+are happy with the graphical user interfaces they use and never ever see
+a command line prompt. So the answer to that question is almost always
+“You don’t”.</p>
+<p>However, some users (mostly old propeller head codgers) are
+comfortable at the command line and prefer to use it over the tedious
+mouse clicks required to get anything done in a graphical user
+interface. Different lanes for different brains.</p>
+<p>I would say the most significant use case for command line control of
+anything is automation. For example, if I want to schedule playback of
+specified music in specific zones triggered by some event, then command
+line control can be used to implement this. That can be done via Cron
+jobs, play something in some zone at scheduled times. Or playback of
+specified songs in selected zones could be triggered by some event like
+when a particular face is recognized by my smart mirror or when my smart
+lights are turned to a particular profile. I use command line control of
+Roon coupled with Apple Siri voice commands that trigger an SSH shortcut
+to run the command. There are many use cases for automation using
+command line utilities.</p>
+<p>The other main use case for command line control is simple
+convenience. If you spend a lot of time in a Shell environment then it
+is just easier to type a command that plays what you would like to hear
+where you want to hear it than it is to switch windows, bring up a GUI,
+click a few times to find what you want, and click to play it, then go
+back to your terminal window and Shell env. Most people do not live in a
+Shell environment like I do so this use case is not that
+significant.</p>
+<p>Finally, the command line interface and the associated Roon API can
+provide capabilities not available in the Roon GUI. Searching, listing,
+and filtering can be augmented by the plethora of tools available in a
+typical Shell environment. You can pipe the output of a Roon command to
+grep, sed, awk, and other standard utilities to produce results
+unavailable in the GUI. That is, command line control along with the API
+and Shell utilities/builtins can extend the capabilities of the Roon
+audio system. The RoonCommandLine package also enables some features not
+easily available in the Roon GUI. One of these, preconfigured Zone
+Grouping, allows the RoonCommandLine user to easily and quickly switch
+between any of the preconfigured zone groupings in
+<code>/usr/local/Roon/etc/roon_api.ini</code>. Yes, you can change the
+zone grouping in Roon but it takes quite a few actions on the user’s
+part to accomplish this. In my household I find it frequently desirable
+to be able to switch zone groupings easily and quickly and I can do so
+by configuring these presets to my typical use cases. Another feature of
+RoonCommandLine not easily found in the Roon GUI is the ability to
+search the Roon Database for tracks by an artist and other combinations
+of search filters. While the Roon GUI has an exceptional filtering
+mechanism, try doing a search for all tracks containing the string
+“Love” by the artists with name containg the string “Beatles”. It’s
+quick and easy to do with a single RoonCommandLine command.</p>
+<h3 id="applications">Applications</h3>
+<h4 id="stream-spotify-from-a-raspberry-pi-into-roon">Stream Spotify
+from a Raspberry Pi into Roon</h4>
+<p>Roon Community Moderator, René, describes how to stream Spotify from
+a Raspberry Pi into Roon as a Live Radio station in a <a
+href="https://community.roonlabs.com/t/worlds-most-expensive-spotify-playback-system/183617">Roon
+Community Forum Post</a>. The setup integrates the <a
+href="https://help.roonlabs.com/portal/en/kb/articles/hqplayer">HQPlayer
+up-sampling media player</a> with the <a
+href="https://github.com/TheAppgineer/roon-entrypoints/wiki">Roon
+Entrypoints extension</a>, RoonCommandLine, and Apple Shortcuts turning
+a spare Pi into an audio web stream that Roon can take in as a Live
+Radio station. Pretty incredible and fairly easy.</p>
+<p>Note that the expensive component in this setup is HQPlayer which is
+only needed for its up-sampling and not required.</p>
+<h3 id="history">History</h3>
+<p>This project began as an attempt to control Roon with Siri voice
+commands. Several users had posted in the Roon forums various ways to
+use Siri to control Roon. These usually took the form of a fake device
+in HomeBridge that then communicates with HomeKit and Siri. This seemed
+cool but maybe overkill. I was able to get Siri voice control of Roon
+working with simple SSH shortcuts that execute Python scripts which
+utilize the Roon API to control Roon.</p>
+<p>Apple SSH shortcuts can be used to execute commands on systems that
+allow SSH access. I used an Ubuntu 20.10 system recently installed to
+install the Python Roon API project (pip install roonapi) and quickly
+cobbled together a Python script based on one of the examples in that
+project. The Python script accepts an argument specifying an artist name
+in my Roon library. It then uses the Roon API to play music from my
+library by that artist in the specified zone.</p>
+<p>On my iPhone I then created shortcuts which use the “Run script over
+SSH” option for Apple Scripting shortcuts. The shortcuts execute a Bash
+command which is a shell script that executes the Python script with
+appropriate arguments. It all seems to work. I did run into a few
+gotchas. It seems with current Python/Pip installs you need to specify
+an environment variable telling Python where the Pip modules are
+located. So I needed a login shell to pick that up but I could not
+figure out how to tell the Apple shortcut to give me an SSH login shell.
+The Python env variable is set in the shell script the SSH session
+executes.</p>
+<p>Currently this project has morphed primarily into a set of command
+line tools to control various aspects of Roon remotely. There is still
+the capability to augment this command line control with Siri voice
+commands that trigger an Apple Shortcut which executes a command via
+SSH. But what we have here in the repository are the command line
+tools.</p>
+<p>RoonCommandLine v2.0.0 introduced Debian and RPM format package
+installation accompanied with extensive automated configuration. In most
+environments, deployment of this package will require little to no
+manual configuration.</p>
+<h2 id="contents">Contents</h2>
+<p><a href="bin/roon"><strong>roon</strong></a> - Frontend that provides
+the primary user interface to communicate commands via the Python Roon
+API. Recommended usage is to issue Roon commands and queries via the
+<code>roon</code> frontend rather than executing the following commands
+directly.</p>
+<p><a href="bin/clone_pyroon"><strong>clone_pyroon</strong></a> -
+Retrieve the pyroon project source code from Github and apply my
+patches</p>
+<p><a href="bin/get_core_ip"><strong>get_core_ip</strong></a> - Retrieve
+the Roon Core IP address</p>
+<p><a href="bin/get_zone_info"><strong>get_zone_info</strong></a> -
+Retrieve zone information</p>
+<p><a
+href="bin/get_zone_remaining"><strong>get_zone_remaining</strong></a> -
+Get remaining play time in zone</p>
+<p><a href="bin/get_zones"><strong>get_zones</strong></a> - Get
+zones</p>
+<p><a href="bin/get_zone_volume"><strong>get_zone_volume</strong></a> -
+Get volume in zone</p>
+<p><a href="bin/play_album"><strong>play_album</strong></a> - Frontend
+for playing a specified album in my Roon library</p>
+<p><a href="bin/play_artist"><strong>play_artist</strong></a> - Frontend
+for playing a specified artist in my Roon library</p>
+<p><a
+href="bin/play_artist_album"><strong>play_artist_album</strong></a> -
+Play album by artist</p>
+<p><a
+href="bin/play_artist_track"><strong>play_artist_track</strong></a> -
+Play track by artist</p>
+<p><a href="bin/play_composer"><strong>play_composer</strong></a> - Play
+composer</p>
+<p><a
+href="bin/play_composer_album"><strong>play_composer_album</strong></a>
+- Play album by composer</p>
+<p><a href="bin/play_genre_album"><strong>play_genre_album</strong></a>
+- Play album in genre</p>
+<p><a
+href="bin/play_genre_artist"><strong>play_genre_artist</strong></a> -
+Play artist in genre</p>
+<p><a href="bin/play_genre"><strong>play_genre</strong></a> - Frontend
+to play a specified genre</p>
+<p><a href="bin/play_playlist"><strong>play_playlist</strong></a> -
+Frontend to play a specified playlist</p>
+<p><a href="bin/play_radio"><strong>play_radio</strong></a> - Frontend
+for playing Live Radio in a Roon zone</p>
+<p><a href="bin/play_tag"><strong>play_tag</strong></a> - Frontend to
+play a specified tag</p>
+<p><a href="bin/list_albums"><strong>list_albums</strong></a> - Search
+and list the available Albums in your Roon Library</p>
+<p><a href="bin/list_artists"><strong>list_artists</strong></a> - Search
+and list the available Artists in your Roon Library</p>
+<p><a
+href="bin/list_artist_albums"><strong>list_artist_albums</strong></a> -
+List albums by artist</p>
+<p><a
+href="bin/list_artist_tracks"><strong>list_artist_tracks</strong></a> -
+List tracks by artist</p>
+<p><a
+href="bin/list_composer_albums"><strong>list_composer_albums</strong></a>
+- List albums by composer</p>
+<p><a href="bin/list_composers"><strong>list_composers</strong></a> -
+List composers</p>
+<p><a
+href="bin/list_genre_albums"><strong>list_genre_albums</strong></a> -
+List albums in genre</p>
+<p><a
+href="bin/list_genre_artists"><strong>list_genre_artists</strong></a> -
+List artists in genre</p>
+<p><a
+href="bin/list_playlist_tracks"><strong>list_playlist_tracks</strong></a>
+- List tracks in playlist</p>
+<p><a href="bin/list_genres"><strong>list_genres</strong></a> - Search
+and list the available Genres in your Roon Library</p>
+<p><a href="bin/list_playlists"><strong>list_playlists</strong></a> -
+Search and list the available Roon Playlists</p>
+<p><a href="bin/list_radio"><strong>list_radio</strong></a> - Search and
+list the available Roon Live Radio Stations</p>
+<p><a href="bin/list_tags"><strong>list_tags</strong></a> - Search and
+list the available Roon Library tags</p>
+<p><a href="bin/list_zones"><strong>list_zones</strong></a> - List the
+available Roon Zones</p>
+<p><a href="bin/now_playing"><strong>now_playing</strong></a> - Display
+currently playing track in zone or all zones</p>
+<p><a href="bin/roon_fade"><strong>roon_fade</strong></a> -
+Enable/disable volume fade out and fade in for tracks in zone</p>
+<p><a href="bin/set_volume"><strong>set_volume</strong></a> - Set the
+volume level of selected Roon Zone</p>
+<p><a href="bin/set_zone"><strong>set_zone</strong></a> - Set the Roon
+Zone in which subsequent commands will run</p>
+<p><a href="bin/set_zone_group"><strong>set_zone_group</strong></a> -
+Set one of the Roon Zone groupings specified in roon_api.ini</p>
+<p><a href="bin/zone_command"><strong>zone_command</strong></a> -
+Frontend for commands to be issued in the selected Roon Zone (e.g. play,
+pause, pause_all, mute, mute_all, next track, previous track)</p>
+<p><a href="LICENSE"><strong>LICENSE</strong></a> - Apache License
+version 2.0</p>
+<p><a href="NOTICE"><strong>NOTICE</strong></a> - Copyright notice</p>
+<p><a href="Install"><strong>Install</strong></a> - Installation
+script</p>
+<p><a href="Uninstall"><strong>Uninstall</strong></a> - Removal
+script</p>
+<p><a href="macInstall"><strong>macInstall</strong></a> - Installation
+script for Mac OS (called from <code>Install</code>)</p>
+<p><a href="usage.txt"><strong>usage.txt</strong></a> - Frontend “roon”
+script usage documentation</p>
+<p><a href="api/README.md"><strong>api/</strong></a> - Python scripts to
+call the Roon API with appropriate arguments</p>
+<p><a href="patches/README.md"><strong>patches/</strong></a> - Patches
+to the Python Roon API to extend its capabilities</p>
+<h2 id="connect">Connect</h2>
+<p><a
+href="https://ronrecord.com"><img align="left" alt="ronrecord.com" width="22px" src="icons/globe.png" /></a>
+<a
+href="https://youtube.com/c/doctorfree"><img align="left" alt="doctorfree | YouTube" width="22px" src="icons/youtube.png" /></a>
+<a
+href="https://twitter.com/ronrecord"><img align="left" alt="ronrecord | Twitter" width="22px" src="icons/twitter.png" /></a>
+<a
+href="https://linkedin.com/in/ronrecord"><img align="left" alt="ronrecord | LinkedIn" width="22px" src="icons/linkedin.png" /></a>
+<a
+href="https://instagram.com/doctorfree"><img align="left" alt="doctorfree | Instagram" width="22px" src="icons/instagram.png" /></a>
+<a rel="me" href="https://fosstodon.org/@doctorfree"><img align="left" alt="doctorfree | Mastodon" width="22px" src="icons/mastodon.png" /></a></p>
 
 <div align="center">
   <h2 id="connect">Connect</h2>
