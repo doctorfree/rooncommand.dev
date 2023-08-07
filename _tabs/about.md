@@ -1,7 +1,7 @@
 ---
 # the default layout is 'page'
 icon: fas fa-info-circle
-order: 7
+order: 6
 ---
 
 > **"The cosmic operating system uses a command line interface. It runs on
