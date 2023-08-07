@@ -22,6 +22,10 @@ it is as yet untested.
   - [Zone groupings and defaults](#zone-groupings-and-defaults)
   - [SSH public key authentication](#ssh-public-key-authentication)
 - [Manual installation](#manual-installation)
+- [Upgrades](#upgrades)
+- [Remote deployment](#remote-deployment)
+- [RoonCommandLine Light deployment](#rooncommandline-light-deployment)
+- [Removal](#removal)
 
 ### Debian Package installation
 
@@ -248,4 +252,106 @@ not to install the RoonCommandLine package there.
     # which the Python Roon API is installed, then execute the command
     # "roon -L" on that system. This will enable local execution of the
     # Roon Command Line scripts rather than remote execution via SSH.
+```
+
+### Upgrades
+
+If you are upgrading from a previous version of RoonCommandLine, starting
+with Version 2.0.5, customizations made to `/usr/local/Roon/etc/roon_api.ini`
+will be preserved. Unfortunately, upgrading from versions prior to 2.0.5
+will not preserve those customizations without some manual effort.
+
+If you are upgrading from 2.0.4 or earlier it will be necessary to either:
+
+- Backup `roon_api.ini` and reapply your customizations to the newly installed `roon_api.ini`
+
+or
+
+- Prior to applying the upgrade, copy `roon_api.ini` to `/tmp/_roon_api_ini_.save`
+
+The latter, copying `roon_api.ini` to `/tmp/_roon_api_ini_.save`, allows the
+upgrade to automatically preserve your customizations.
+
+If you are upgrading from 2.0.5 or later this should not be necessary
+but a backup prior to upgrading is recommended anyway.
+
+### Remote deployment
+
+Recommended deployment of the RoonCommandLine package is to install the
+entire package on every system from which you wish to execute Roon control
+commands. This deployment ensures you have all commands available without
+the need to configure SSH public key authentication. If you install the
+entire package on every system you wish to use for Roon command line control
+then you can disregard the following instructions on "RoonCommandLine Light"
+deployment.
+
+### RoonCommandLine Light deployment
+
+Not all systems satisfy the RoonCommandLine requirement of Python 3 and Pip.
+On those systems that do not satisfy the Python/Pip requirement it is possible
+to install just the `roon` command and RoonCommandLine configuration files.
+
+After copying /usr/local/bin/roon and the /usr/local/Roon/etc/ directory
+to the target system on which you wish to run Roon commands, perform the
+following setup:
+
+```bash
+sudo mkdir -p /usr/local/bin
+sudo cp roon /usr/local/bin/roon
+sudo chmod 755 /usr/local/bin/roon
+# Edit the `server` and `user` settings near the top of the script
+sudo vi /usr/local/bin/roon
+sudo mkdir /usr/local/Roon
+sudo mkdir /usr/local/Roon/etc
+sudo cp etc/pyroonconf /usr/local/Roon/etc/pyroonconf
+sudo cp etc/roon_api.ini /usr/local/Roon/etc/roon_api.ini
+# Make the RoonCommandLine configuration directory writeable by your user
+USER=`id -u -n`
+GROUP=`id -g -n`
+sudo chown -R ${USER}:${GROUP} /usr/local/Roon/etc
+sudo chmod 755 /usr/local/Roon/etc
+sudo chmod 644 /usr/local/Roon/etc/*
+```
+
+**Note** A "RoonCommandLine Light" deployment of this nature not only requires
+significant manual setup but will also require the configuration of SSH public
+key authentication between the target system and a system on which the
+RoonCommandLine package was installed. For this reason, it is recommended that
+deployments install the entire package on every system, eliminating the need
+for extensive manual configuration and SSH public key authentication.
+
+### Removal
+
+On Debian based Linux systems where the RoonCommandLine package was installed
+using the RoonCommandLine Debian format package, remove the RoonCommandLine
+package by executing the command:
+
+```bash
+    sudo apt remove rooncommandline
+```
+or
+```bash
+    sudo dpkg -r rooncommandline
+```
+
+On RPM based Linux systems where the RoonCommandLine package was installed
+using the RoonCommandLine RPM format package, remove the RoonCommandLine
+package by executing the command:
+
+```bash
+    sudo yum remove RoonCommandLine
+```
+or
+```bash
+    sudo rpm -e RoonCommandLine
+```
+
+On Mac OS X systems, the RoonCommandLine scripts, patches,
+and configuration can be removed by executing the "Uninstall" script in the
+RoonCommandLine source directory:
+
+```bash
+    git clone git@github.com:doctorfree/RoonCommandLine.git
+    cd RoonCommandLine
+    ./Uninstall
 ```

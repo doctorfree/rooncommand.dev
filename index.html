@@ -164,91 +164,13 @@ See the
 <a href="https://rooncommand.dev/install">RoonCommandLine Install section</a>
 for details on installing RoonCommandLine.
 <h2 id="upgrades">Upgrades</h2>
-<p>If you are upgrading from a previous version of RoonCommandLine,
-starting with Version 2.0.5, customizations made to
-<code>/usr/local/Roon/etc/roon_api.ini</code> will be preserved.
-Unfortunately, upgrading from versions prior to 2.0.5 will not preserve
-those customizations without some manual effort.</p>
-<p>If you are upgrading from 2.0.4 or earlier it will be necessary to
-either:</p>
-<ul>
-<li>Backup <code>roon_api.ini</code> and reapply your customizations to
-the newly installed <code>roon_api.ini</code></li>
-</ul>
-<p>or</p>
-<ul>
-<li>Prior to applying the upgrade, copy <code>roon_api.ini</code> to
-<code>/tmp/_roon_api_ini_.save</code></li>
-</ul>
-<p>The latter, copying <code>roon_api.ini</code> to
-<code>/tmp/_roon_api_ini_.save</code>, allows the upgrade to
-automatically preserve your customizations.</p>
-<p>If you are upgrading from 2.0.5 or later this should not be necessary
-but a backup prior to upgrading is recommended anyway.</p>
+See <a href="https://rooncommand.dev/install#upgrades">RoonCommandLine Upgrades</a>
 <h2 id="remote-deployment">Remote deployment</h2>
-<p>Recommended deployment of the RoonCommandLine package is to install
-the entire package on every system from which you wish to execute Roon
-control commands. This deployment ensures you have all commands
-available without the need to configure SSH public key authentication.
-If you install the entire package on every system you wish to use for
-Roon command line control then you can disregard the following
-instructions on “RoonCommandLine Light” deployment.</p>
-<h3 id="rooncommandline-light-deployment">RoonCommandLine Light
-deployment</h3>
-<p>Not all systems satisfy the RoonCommandLine requirement of Python 3
-and Pip. On those systems that do not satisfy the Python/Pip requirement
-it is possible to install just the <code>roon</code> command and
-RoonCommandLine configuration files.</p>
-<p>After copying /usr/local/bin/roon and the /usr/local/Roon/etc/
-directory to the target system on which you wish to run Roon commands,
-perform the following setup:</p>
-<div class="sourceCode" id="cb11"><pre
-class="sourceCode bash"><code class="sourceCode bash"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> mkdir <span class="at">-p</span> /usr/local/bin</span>
-<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> cp roon /usr/local/bin/roon</span>
-<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> chmod 755 /usr/local/bin/roon</span>
-<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Edit the `server` and `user` settings near the top of the script</span></span>
-<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> vi /usr/local/bin/roon</span>
-<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> mkdir /usr/local/Roon</span>
-<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> mkdir /usr/local/Roon/etc</span>
-<span id="cb11-8"><a href="#cb11-8" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> cp etc/pyroonconf /usr/local/Roon/etc/pyroonconf</span>
-<span id="cb11-9"><a href="#cb11-9" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> cp etc/roon_api.ini /usr/local/Roon/etc/roon_api.ini</span>
-<span id="cb11-10"><a href="#cb11-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Make the RoonCommandLine configuration directory writeable by your user</span></span>
-<span id="cb11-11"><a href="#cb11-11" aria-hidden="true" tabindex="-1"></a><span class="va">USER</span><span class="op">=</span><span class="kw">`</span><span class="fu">id</span> <span class="at">-u</span> <span class="at">-n</span><span class="kw">`</span></span>
-<span id="cb11-12"><a href="#cb11-12" aria-hidden="true" tabindex="-1"></a><span class="va">GROUP</span><span class="op">=</span><span class="kw">`</span><span class="fu">id</span> <span class="at">-g</span> <span class="at">-n</span><span class="kw">`</span></span>
-<span id="cb11-13"><a href="#cb11-13" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> chown <span class="at">-R</span> <span class="va">${USER}</span>:<span class="va">${GROUP}</span> /usr/local/Roon/etc</span>
-<span id="cb11-14"><a href="#cb11-14" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> chmod 755 /usr/local/Roon/etc</span>
-<span id="cb11-15"><a href="#cb11-15" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> chmod 644 /usr/local/Roon/etc/<span class="pp">*</span></span></code></pre></div>
-<p><strong>Note</strong> A “RoonCommandLine Light” deployment of this
-nature not only requires significant manual setup but will also require
-the configuration of SSH public key authentication between the target
-system and a system on which the RoonCommandLine package was installed.
-For this reason, it is recommended that deployments install the entire
-package on every system, eliminating the need for extensive manual
-configuration and SSH public key authentication.</p>
+See <a href="https://rooncommand.dev/install#remote-deployment">RoonCommandLine Remote Deployment</a>
+<h2 id="rooncommandline-light-deployment">RoonCommandLine Light deployment</h2>
+See <a href="https://rooncommand.dev/install#rooncommandline-light-deployment">RoonCommandLine Light Deployment</a>
 <h2 id="removal">Removal</h2>
-<p>On Debian based Linux systems where the RoonCommandLine package was
-installed using the RoonCommandLine Debian format package, remove the
-RoonCommandLine package by executing the command:</p>
-<div class="sourceCode" id="cb12"><pre
-class="sourceCode bash"><code class="sourceCode bash"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>    <span class="fu">sudo</span> apt remove rooncommandline</span></code></pre></div>
-<p>or</p>
-<div class="sourceCode" id="cb13"><pre
-class="sourceCode bash"><code class="sourceCode bash"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>    <span class="fu">sudo</span> dpkg <span class="at">-r</span> rooncommandline</span></code></pre></div>
-<p>On RPM based Linux systems where the RoonCommandLine package was
-installed using the RoonCommandLine RPM format package, remove the
-RoonCommandLine package by executing the command:</p>
-<div class="sourceCode" id="cb14"><pre
-class="sourceCode bash"><code class="sourceCode bash"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>    <span class="fu">sudo</span> yum remove RoonCommandLine</span></code></pre></div>
-<p>or</p>
-<div class="sourceCode" id="cb15"><pre
-class="sourceCode bash"><code class="sourceCode bash"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>    <span class="fu">sudo</span> rpm <span class="at">-e</span> RoonCommandLine</span></code></pre></div>
-<p>On Mac OS X systems, the RoonCommandLine scripts, patches, and
-configuration can be removed by executing the “Uninstall” script in the
-RoonCommandLine source directory:</p>
-<div class="sourceCode" id="cb16"><pre
-class="sourceCode bash"><code class="sourceCode bash"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>    <span class="fu">git</span> clone git@github.com:doctorfree/RoonCommandLine.git</span>
-<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>    <span class="bu">cd</span> RoonCommandLine</span>
-<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>    <span class="ex">./Uninstall</span></span></code></pre></div>
+See <a href="https://rooncommand.dev/install#removal">RoonCommandLine Removal</a>
 <h2 id="documentation">Documentation</h2>
 See the
 <a href="https://rooncommand.dev/documentation">RoonCommandLine Documentation section</a>
