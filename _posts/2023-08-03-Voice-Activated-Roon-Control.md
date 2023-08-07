@@ -2,8 +2,8 @@
 title: Voice Activated Roon Control
 author: doctorfree
 date: 2023-08-03 13:42:00 +0800
-categories: [Blogging, Tutorial, Information]
-tags: [info voice control]
+categories: [Tutorial, Information]
+tags: [info, voice, control]
 pin: true
 img_path: "/posts/20230803"
 ---

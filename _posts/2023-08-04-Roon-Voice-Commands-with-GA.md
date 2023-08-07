@@ -2,8 +2,8 @@
 title: Roon Voice Commands with Google Assistant
 author: doctorfree
 date: 2023-08-04 11:25:00 +0800
-categories: [Blogging, Tutorial, Information]
-tags: [info tutorial voice google assistant]
+categories: [Tutorial, Information]
+tags: [info, tutorial, voice, google, assistant, google assistant]
 pin: true
 img_path: "/posts/20230804"
 ---

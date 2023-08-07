@@ -3,7 +3,7 @@ title: Introduction to the Command Line
 author: doctorfree
 date: 2023-08-06 16:55:00 +0800
 categories: [Blogging, Tutorial]
-tags: [intro commandline command line]
+tags: [intro, command line, command]
 pin: true
 img_path: "/posts/20230806"
 ---
