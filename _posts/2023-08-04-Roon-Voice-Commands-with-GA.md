@@ -83,7 +83,7 @@ package which contains a shell command that acts as a frontend to
 the [Python Roon API](https://github.com/pavoni/pyroon).
 
 See the
-[RoonCommandLine README](https://github.com/doctorfree/RoonCommandLine/-/blob/master/README.md)
+[RoonCommandLine website](https://rooncommand.dev)
 for an overview of this package and documentation on its installation,
 configuration, and use.
 
@@ -122,7 +122,7 @@ contents of the file `/etc/os-release`.
 
 To install on a Debian based Linux system, download the latest Debian format
 package from the
-[RoonCommandLine Releases](https://github.com/doctorfree/RoonCommandLine/-/releases).
+[RoonCommandLine Releases](https://github.com/doctorfree/RoonCommandLine/releases).
 
 Install the RoonCommandLine package by executing the command
 
@@ -144,7 +144,7 @@ openSUSE, OpenMandriva, Mandrake Linux, Red Hat Linux, and Oracle Linux.
 
 To install on an RPM based Linux system, download the latest RPM format
 package from the
-[RoonCommandLine Releases](https://github.com/doctorfree/RoonCommandLine/-/releases).
+[RoonCommandLine Releases](https://github.com/doctorfree/RoonCommandLine/releases).
 
 Install the RoonCommandLine package by executing the command
 
@@ -214,7 +214,7 @@ recipes in the [MirrorCommand package](https://github.com/doctorfree/MirrorComma
 Installation of MirrorCommand is not required but greatly eases initial setup
 of the Google Assistant recipes for voice control of Roon. Installation is
 recommended. See the
-[MirrorCommand README](https://github.com/doctorfree/MirrorCommand/-/blob/master/README)
+[MirrorCommand README](https://github.com/doctorfree/MirrorCommand/blob/master/README)
 for installation and setup instructions. The initial installation is similar to
 that for the RoonCommandLine package:
 
@@ -223,7 +223,7 @@ that for the RoonCommandLine package:
 Many Google Assistant voice triggers are preconfigured as MMM-GoogleAssistant
 To install MirrorCommand on the MagicMirror system:
 
-[Download the latest Debian or RPM format packages](https://github.com/doctorfree/MirrorCommand/-/releases)
+[Download the latest Debian or RPM format packages](https://github.com/doctorfree/MirrorCommand/releases)
 
 **NOTE:** The automated configuration requires access to some X11 graphical utilities. Depending upon your system's X11 configuration, it may be necessary to grant the _root_ user access to the display. To do so, prior to installation issue the command:
 

@@ -33,7 +33,7 @@ package which contains a shell command that acts as a frontend to
 the [Python Roon API](https://github.com/pavoni/pyroon).
 
 See the
-[RoonCommandLine README](https://github.com/doctorfree/RoonCommandLine/-/blob/master/README.md)
+[RoonCommandLine website](https://rooncommand.dev)
 for an overview of this package and documentation on its installation,
 configuration, and use.
 
@@ -72,7 +72,7 @@ contents of the file `/etc/os-release`.
 
 To install on a Debian based Linux system, download the latest Debian format
 package from the
-[RoonCommandLine Releases](https://github.com/doctorfree/RoonCommandLine/-/releases).
+[RoonCommandLine Releases](https://github.com/doctorfree/RoonCommandLine/releases).
 
 Install the RoonCommandLine package by executing the command
 
@@ -94,7 +94,7 @@ openSUSE, OpenMandriva, Mandrake Linux, Red Hat Linux, and Oracle Linux.
 
 To install on an RPM based Linux system, download the latest RPM format
 package from the
-[RoonCommandLine Releases](https://github.com/doctorfree/RoonCommandLine/-/releases).
+[RoonCommandLine Releases](https://github.com/doctorfree/RoonCommandLine/releases).
 
 Install the RoonCommandLine package by executing the command
 
@@ -174,9 +174,9 @@ extension run the command `/usr/local/bin/get_core_ip` and when prompted,
 authorize the extension in Roon `Settings -> Extensions`. Note that the
 IP address returned for the Roon Core by `get_core_ip` is correct. If a
 simple listing of zones with `roon -l zones` still fails then check the
-[Troubleshooting](https://github.com/doctorfree/RoonCommandLine/-/blob/master/README.md#troubleshooting)
+[Troubleshooting](https://rooncommand.dev#troubleshooting)
 section of the
-[RoonCommandLine README](https://github.com/doctorfree/RoonCommandLine/-/blob/master/README.md)
+[RoonCommandLine README](https://github.com/doctorfree/RoonCommandLine/blob/master/README.md)
 
 After verifying the RoonCommandLine package is successfully communicating
 with the Roon Core, proceed to the next section.
@@ -335,7 +335,7 @@ Shortcut "User" setting, attempt to run the command at the command line prompt:
 Attempt to run the exact same command you entered in the shortcut Script text box.
 If it does not succeed as expected then the issue is not in your shortcut or
 Siri but in the Roon command line setup. See the
-[Troubleshooting section](https://github.com/doctorfree/RoonCommandLine#troubleshooting)
+[Troubleshooting section](https://rooncommand.dev#troubleshooting)
 of the RoonCommandLine README to resolve this issue.
 
 #### Verify SSH Authentication

@@ -65,14 +65,14 @@ SSH Shortcuts are confirmed to be working, proceed to the
 described below followed by the
 [Apple Siri Roon Control Setup](#apple-siri-roon-control-setup).
 
-See the wiki article
-[Roon Voice Commands with Siri](https://github.com/doctorfree/RoonCommandLine/-/wikis/Roon-Voice-Commands-with-Siri)
+See the article
+[Roon Voice Commands with Siri](https://rooncommand.dev/posts/Roon-Voice-Commands-with-Siri)
 for a detailed walkthru of Roon voice control using Siri and Apple Shortcuts.
 
 ## Using Google Assistant
 
-See the wiki article
-[Roon Voice Commands with Google Assistant](https://github.com/doctorfree/RoonCommandLine/-/wikis/Roon-Voice-Commands-with-GA)
+See the article
+[Roon Voice Commands with Google Assistant](https://rooncommand.dev/posts/Roon-Voice-Commands-with-GA)
 for a detailed walkthru of Roon voice control using MagicMirror modules and
 Google Assistant.
 
@@ -130,7 +130,7 @@ package which contains a shell command that acts as a frontend to
 the [Python Roon API](https://github.com/pavoni/pyroon).
 
 See the
-[RoonCommandLine README](https://github.com/doctorfree/RoonCommandLine/-/blob/master/README.md)
+[RoonCommandLine website](https://rooncommand.dev)
 for an overview of this package and documentation on its installation,
 configuration, and use.
 
@@ -169,7 +169,7 @@ contents of the file `/etc/os-release`.
 
 To install on a Debian based Linux system, download the latest Debian format
 package from the
-[RoonCommandLine Releases](https://github.com/doctorfree/RoonCommandLine/-/releases).
+[RoonCommandLine Releases](https://github.com/doctorfree/RoonCommandLine/releases).
 
 Install the RoonCommandLine package by executing the command
 
@@ -191,7 +191,7 @@ openSUSE, OpenMandriva, Mandrake Linux, Red Hat Linux, and Oracle Linux.
 
 To install on an RPM based Linux system, download the latest RPM format
 package from the
-[RoonCommandLine Releases](https://github.com/doctorfree/RoonCommandLine/-/releases).
+[RoonCommandLine Releases](https://github.com/doctorfree/RoonCommandLine/releases).
 
 Install the RoonCommandLine package by executing the command
 
@@ -263,8 +263,8 @@ and RoonCommandLine has been installed and configured on a system in the same
 local area network as your Roon Core, it's now time to configure Roon Control
 using Apple Siri.
 
-See the wiki article
-[Roon Voice Commands with Siri](https://github.com/doctorfree/RoonCommandLine/-/wikis/Roon-Voice-Commands-with-Siri)
+See the article
+[Roon Voice Commands with Siri](https://rooncommand.dev/posts/Roon-Voice-Commands-with-Siri)
 for a detailed walkthru of Roon voice control using Siri and Apple Shortcuts.
 
 ## References
