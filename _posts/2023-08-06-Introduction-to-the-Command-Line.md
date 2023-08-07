@@ -5,34 +5,8 @@ date: 2023-08-06 16:55:00 +0800
 categories: [Blogging, Tutorial]
 tags: [intro commandline command line]
 pin: true
-img_path: '/posts/20230806'
+img_path: "/posts/20230806"
 ---
-
-## Table of Contents
-
-1. [What is the Command Line](#what-is-the-command-line)
-1. [Why use the Command Line](#why-use-the-command-line)
-    1. [Resize images example](#resize-images-example)
-    1. [Roon timed zone playback example](#roon-timed-zone-playback-example)
-1. [History](#history)
-1. [Opening the Command Line](#opening-the-command-line)
-    1. [Mac OS](#mac-os)
-    1. [Linux](#linux)
-    1. [Microsoft Windows](#microsoft-windows)
-1. [The Command Line Prompt](#the-command-line-prompt)
-1. [Getting started with basic commands](#getting-started-with-basic-commands)
-    1. [Moving files](#moving-files)
-    1. [Copying files and folders](#copying-files-and-folders)
-    1. [Wildcards](#wildcards)
-    1. [Deleting files and folders](#deleting-files-and-folders)
-    1. [Listing files](#listing-files)
-    1. [Changing the current working directory](#changing-the-current-working-directory)
-    1. [Making a new folder](#making-a-new-folder)
-    1. [Getting help for a command](#getting-help-for-a-command)
-    1. [Common Commands](#common-commands)
-1. [Running scripts](#running-scripts)
-1. [Accessing another system with the Command Line](#accessing-another-system-with-the-command-line)
-1. [Permissions and ownership](#permissions-and-ownership)
 
 ## What is the Command Line
 
@@ -66,6 +40,7 @@ Many software systems implement command line interfaces for control and operatio
 This includes programming environments and utility programs.
 
 ## Why use the Command Line
+
 As noted above, the command line interface can be used to easily automate computer
 actions. This is the primary motivation for command line usage. In addition,
 there are many tasks that can only be performed at the command line. That is,
@@ -75,6 +50,7 @@ and satisfy the requirements for most users but all functionality behind the
 application's normal use may not be exposed in the graphical user interface.
 
 ### Resize images example
+
 For example, say you need to resize all the images in a folder. This can be
 accomplished in a graphical user interface through a series of tedious mouse
 clicks and text entries into forms followed by more mouse clicks and confirmation
@@ -123,6 +99,7 @@ echo "Successfully resized ${count} JPEG images in ${IMGDIR}"
 ```
 
 ### Roon timed zone playback example
+
 There are many many uses of the command line in automation. Another example,
 specific to the RoonCommandLine project, might be the playback of specified
 playlists in designated Roon Zones at a club with the Roon Audio System.
@@ -147,17 +124,18 @@ The Crontab entries might look like:
 #
 # Club Deli opens at 10am
 0 10 * * * /usr/local/bin/roon -p "Deli Playlist" -z "Deli Zone"
-# Dance Hall opens at 6pm 
+# Dance Hall opens at 6pm
 0 18 * * * /usr/local/bin/roon -p "Dance Playlist" -z "Dance Zone"
-# Bar opens at 4pm 
+# Bar opens at 4pm
 0 16 * * * /usr/local/bin/roon -p "Bar Playlist" -z "Bar Zone"
-# Deli closing time is 9pm 
+# Deli closing time is 9pm
 0 21 * * * /usr/local/bin/roon -c stop -z "Deli Zone"
-# Dance Hall closing time is 1am 
+# Dance Hall closing time is 1am
 0 1 * * * /usr/local/bin/roon -c stop -z "Dance Zone"
-# Bar closing time is 2am 
+# Bar closing time is 2am
 0 2 * * * /usr/local/bin/roon -c stop -z "Bar Zone"
 ```
+
 Create the above crontab file and, on a system with RoonCommandLine installed
 setup the cron job by executing, as the user with `roon` command privileges,
 the command:
@@ -278,6 +256,7 @@ There are varying ways of accessing command line, depending on what operating
 system you use.
 
 ### Mac OS
+
 Go to Applications → Utilities → Terminal
 
 Alternatively, open spotlight search (default way to do this is by hitting
@@ -291,6 +270,7 @@ When you see your username followed by a dollar sign, you’re ready to start
 using command line.
 
 ### Linux
+
 It's probably under
 
 Applications → Accessories → Terminal
@@ -318,8 +298,8 @@ One of the following should open a command line window:
 - Go to the Start screen, hover your mouse in the lower-left corner of the screen, and click the down arrow that appears (on a touch screen, instead flick up from the bottom of the screen). The Apps page should open. Click on Command Prompt in the Windows System section.
 - Hold the special Windows key on your keyboard and press the "X" key. Choose "Command Prompt" from the pop-up menu.
 - Hold the Windows key and press the "R" key to get a "Run" window. Type "cmd" in the box, and click the OK key.
-On Windows 10, open the start menu and go to the shortcuts folder called
-“Windows System”.
+  On Windows 10, open the start menu and go to the shortcuts folder called
+  “Windows System”.
 
 Pressing the dropdown menu should reveal a shortcut to open the Command Prompt
 application.
@@ -338,6 +318,7 @@ Click on “Accessories” and you’ll find the Command Prompt shortcut.
 Right click on the shortcut and press “Run as Administrator”.
 
 ## The Command Line Prompt
+
 After opening a terminal window as described in the previous section,
 you should see a white or black window that is waiting for your commands.
 The window will display a character or string called the command line prompt,
@@ -385,6 +366,7 @@ Where mv is move, target is the file you want to move, and destination is where
 you want to move it to.
 
 ### Copying files and folders
+
 The cp command can be used to copy files and folders.
 
 To copy a file execute the following command:
@@ -411,20 +393,21 @@ destination folder as a sub-folder in that directory, 'destination/destination'.
 The terms 'directory' and 'folder' mean the same thing.
 
 ### Wildcards
-Use the '&ast;' character to represent all. For example, to copy all files in a
-folder that start with the letter 'a', your target should be 'a&ast;':
+
+Use the '\*' character to represent all. For example, to copy all files in a
+folder that start with the letter 'a', your target should be 'a\*':
 
 `cp a* destination_folder`
 
 To copy all files of a certain extension (e.g. '.png'), your target
-should be '&ast;.png':
+should be '\*.png':
 
 `cp *.png destination_folder`
 
 Use the '?' character as a wildcard to represent a single character.
 For example, to copy all files in a folder that have a 3 character suffix
 (e.g. the file `image.jpg` but not the file `image.jpeg`),
-your target should be '&ast;.???':
+your target should be '\*.???':
 
 `cp *.??? destination_folder`
 
@@ -435,6 +418,7 @@ directories beginning with a '.' are typically hidden from view and used
 as system or configuration files. Fun!
 
 ### Deleting files and folders
+
 To delete a file or folder use the 'rm' command:
 
 `rm target`
@@ -462,21 +446,25 @@ An empty directory/folder can be deleted with the 'rmdir' command:
 `rmdir target`
 
 ### Listing files
+
 To see the files and folders in the current working directory use the 'ls' command:
 
 `ls target`
 
 ### Changing the current working directory
+
 Use the 'cd' command to change your current directory:
 
 `cd target`
 
 ### Making a new folder
+
 Use the 'mkdir' command to create new folders/directories:
 
 `mkdir target`
 
 ### Getting help for a command
+
 Most commands have either a built-in help/usage message and/or a manual page
 that describes the command options and usage. To view the manual page for a
 command, use the 'man' command:
@@ -491,6 +479,7 @@ Often commands will display their usage when invoked with the '-h' or '-u' or
 to command.
 
 ### Common Commands
+
 Here is a summary of some useful commands:
 
 <table border="0">
@@ -533,6 +522,7 @@ Here is a summary of some useful commands:
 </table>
 
 ## Running scripts
+
 To run a Python script, e.g. to run the script example.py, execute the command:
 
 `python example.py`
@@ -579,6 +569,7 @@ SSH session, commands issued at the command line prompt in your terminal window
 will be interpreted as commands to execute on the local system.
 
 ## Permissions and ownership
+
 In Unix and Linux systems there are the concepts of 'permission' and 'ownership'.
 Every file and directory has a set of permissions and ownership associated with it.
 Ownership can be specified by User, Group, and Others. Permission can be granted

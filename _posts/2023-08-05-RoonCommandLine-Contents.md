@@ -14,13 +14,6 @@ A brief description of the [Commands](#commands),
 [RoonCommandLine project](https://github.com/doctorfree/RoonCommandLine)
 along with links to each.
 
-## Table of contents
-
-1. [Commands](#commands)
-1. [Python API scripts](#python-api-scripts)
-1. [Configuration files](#configuration-files)
-1. [License, copyright, installation scripts, patches, and usage](#license-copyright-installation-scripts-patches-and-usage)
-
 ## Commands
 
 - [**/usr/local/bin/roon**](https://github.com/doctorfree/RoonCommandLine/-/blob/master/bin/roon)

@@ -23,32 +23,6 @@ executes the Python script with appropriate arguments.
 I will describe in detail this method for voice control of Roon
 using Siri and the setup precedure required.
 
-## Table of Contents
-
-1. [RoonCommandLine Setup](#rooncommandline-setup)
-   1. [RoonCommandLine Requirements](#rooncommandline-requirements)
-   1. [RoonCommandLine Installation](#rooncommandline-installation)
-      1. [Debian Package installation](#debian-package-installation)
-      1. [RPM Package installation](#rpm-package-installation)
-      1. [Mac OS X installation](#mac-os-x-installation)
-      1. [Post installation configuration](#post-installation-configuration)
-         1. [Zone groupings and defaults](#zone-groupings-and-defaults)
-   1. [RoonCommandLine Test](#rooncommandline-test)
-1. [Apple Siri Setup](#apple-siri-setup)
-1. [Apple Siri Roon Control Setup](#apple-siri-roon-control-setup)
-   1. [Navigating the Shortcuts App](#navigating-the-shortcuts-app)
-   1. [Configuring the Shortcut](#configuring-the-shortcut)
-   1. [Naming the Shortcut](#naming-the-shortcut)
-   1. [Testing the Shortcut](#testing-the-shortcut)
-      1. [Adding the Shortcut to the Home Screen](#adding-the-shortcut-to-the-home-screen)
-   1. [Adding More Shortcuts](#adding-more-shortcuts)
-   1. [Troubleshooting Shortcuts](#troubleshooting-shortcuts)
-      1. [Verify Command Line Execution](#verify-command-line-execution)
-      1. [Verify SSH Authentication](#verify-ssh-authentication)
-      1. [Verify SSH Enabled](#verify-ssh-enabled)
-      1. [Modify SSH Command](#modify-ssh-command)
-1. [References](#references)
-
 ## RoonCommandLine Setup
 
 Voice control of Roon as described in this document requires the

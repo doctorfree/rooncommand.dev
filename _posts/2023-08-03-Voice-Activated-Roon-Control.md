@@ -34,26 +34,6 @@ First I will address the voice assistant setup for each. Following those section
 I will describe the integration of the RoonCommandLine package into the setup
 and provide example configurations.
 
-## Table of Contents
-
-1. [Using Apple Siri](#using-apple-siri)
-1. [Using Google Assistant](#using-google-assistant)
-   1. [Google Assistant Requirements](#google-assistant-requirements)
-   1. [Google Assistant Setup](#google-assistant-setup)
-   1. [Google Assistant Roon Control Setup](#google-assistant-roon-control-setup)
-1. [RoonCommandLine Setup](#rooncommandline-setup)
-   1. [RoonCommandLine Requirements](#rooncommandline-requirements)
-   1. [RoonCommandLine Installation](#rooncommandline-installation)
-      1. [Debian Package installation](#debian-package-installation)
-      1. [RPM Package installation](#rpm-package-installation)
-      1. [Mac OS X installation](#mac-os-x-installation)
-      1. [Post installation configuration](#post-installation-configuration)
-         1. [Zone groupings and defaults](#zone-groupings-and-defaults)
-1. [Apple Siri Roon Control Setup](#apple-siri-roon-control-setup)
-1. [References](#references)
-   1. [SSH Setup for Apple Shortcuts](#ssh-setup-for-apple-shortcuts)
-   1. [MagicMirror Google Assistant Setup](#magicmirror-google-assistant-setup)
-
 ## Using Apple Siri
 
 Apple SSH shortcuts can be used to execute commands on systems that allow

@@ -27,24 +27,6 @@ activate a corresponding action which executes a RoonCommandLine command.
 I will describe in detail this method for voice control of Roon
 using Google Assistant and the setup precedure required.
 
-## Table of Contents
-
-1. [Google Assistant Requirements](#google-assistant-requirements)
-1. [Google Assistant Setup](#google-assistant-setup)
-1. [Google Assistant Roon Control Setup](#google-assistant-roon-control-setup)
-1. [RoonCommandLine Setup](#rooncommandline-setup)
-   1. [RoonCommandLine Requirements](#rooncommandline-requirements)
-   1. [RoonCommandLine Installation](#rooncommandline-installation)
-      1. [Debian Package installation](#debian-package-installation)
-      1. [RPM Package installation](#rpm-package-installation)
-      1. [Mac OS X installation](#mac-os-x-installation)
-      1. [Post installation configuration](#post-installation-configuration)
-1. [MirrorCommand Setup](#mirrorcommand-setup)
-1. [MirrorCommand Installation](#mirrorcommand-installation)
-1. [MagicMirror Configuration](#magicmirror-configuration)
-1. [Activate Roon Voice Control](#activate-roon-voice-control)
-1. [References](#references)
-
 ### Google Assistant Requirements
 
 This method for voice control of Roon requires a
