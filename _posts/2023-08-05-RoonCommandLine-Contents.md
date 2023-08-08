@@ -2,7 +2,6 @@
 title: RoonCommandLine Contents
 author: doctorfree
 date: 2023-08-05 12:55:00 +0800
-categories: [Blogging, Information]
 tags: [info, commands, contents]
 pin: true
 img_path: "/posts/20230805"

@@ -1,5 +1,5 @@
 ---
 layout: home
-icon: fas fa-info-circle
+icon: fas fa-stream
 order: 5
 ---

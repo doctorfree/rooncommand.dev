@@ -1,5 +1,7 @@
 ---
-# the default layout is 'page'
+layout: post
+post_style: page
+toc: true
 icon: fas fa-arrow-circle-down
 order: 1
 ---
@@ -329,7 +331,9 @@ package by executing the command:
 ```bash
     sudo apt remove rooncommandline
 ```
+
 or
+
 ```bash
     sudo dpkg -r rooncommandline
 ```
@@ -341,7 +345,9 @@ package by executing the command:
 ```bash
     sudo yum remove RoonCommandLine
 ```
+
 or
+
 ```bash
     sudo rpm -e RoonCommandLine
 ```
