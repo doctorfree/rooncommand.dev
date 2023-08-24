@@ -21,7 +21,7 @@ order: 8
 > ― Neal Stephenson, In the Beginning...Was the Command Line
 
 <div align="center">
-  <img src="https://raw.githubusercontent.com/wiki/doctorfree/RoonCommandLine/assets/rooncommandline.png" style="width:800px;height:140px;" alt="RoonCommandLine" />
+  <img src="https://raw.githubusercontent.com/wiki/doctorfree/RoonCommandLine/assets/rooncommandline.png" style="width:998px;height:75px;" alt="RoonCommandLine" />
 </div>
 
 ## Overview
