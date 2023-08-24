@@ -215,8 +215,8 @@ Any listing command can be turned into a play command in a similar manner.
 The command line has a long and storied history in computing. Read some of that
 history, learn how to open a command line terminal window on various systems,
 how to get started using the command line, and see some examples of why the command
-line interface is so powerful by reading the RoonCommandLine wiki article
-[Introduction to Using the Command Line](https://github.com/doctorfree/RoonCommandLine/-/wikis/Introduction-to-Using-the-Command-Line){:target="_blank"}{:rel="noopener noreferrer"}.
+line interface is so powerful by reading the RoonCommandLine article
+[Introduction to Using the Command Line](https://rooncommand.dev/posts/Introduction-to-the-Command-Line/).
 
 This introduction to the command line includes an example of how to automate
 playback of Roon playlists in specified Roon zones at designated times of day.
@@ -227,20 +227,20 @@ RoonCommandLine can be used to provide a command line interface for the remote
 execution of commands via SSH or other facilities such as Google Assistant.
 In this way, voice control of Roon can be implemented on mobile devices or
 other "smart" devices. Example implementations using Apple Siri and
-Google Assistant are described in the following RoonCommandLine Wiki articles.
+Google Assistant are described in the following RoonCommandLine articles.
 
 #### Roon Voice Commands with Siri
 
-The RoonCommandLine Wiki article
-["Roon Voice Commands with Siri"](https://github.com/doctorfree/RoonCommandLine/-/wikis/Roon-Voice-Commands-with-Siri){:target="_blank"}{:rel="noopener noreferrer"}
+The RoonCommandLine article
+["Roon Voice Commands with Siri"](https://rooncommand.dev/posts/Roon-Voice-Commands-with-Siri/)
 describes in detail how to setup Roon voice commands using Apple Shortcuts
 on an iOS device. This method utilizes Siri to recognize the voice commands
 and run the Shortcut which uses SSH to execute the command.
 
 #### Roon Voice Commands with Google Assistant
 
-The RoonCommandLine Wiki article
-["Roon Voice Commands with Google Assistant"](https://github.com/doctorfree/RoonCommandLine/-/wikis/Roon-Voice-Commands-with-GA){:target="_blank"}{:rel="noopener noreferrer"}
+The RoonCommandLine article
+["Roon Voice Commands with Google Assistant"](https://rooncommand.dev/posts/Roon-Voice-Commands-with-GA/)
 describes in detail how to setup Roon voice commands using the
 [MMM-GoogleAssistant](http://wiki.bugsounet.fr/en/MMM-GoogleAssistant){:target="_blank"}{:rel="noopener noreferrer"}
 and [MMM-Detector](http://wiki.bugsounet.fr/en/MMM-Detector){:target="_blank"}{:rel="noopener noreferrer"}
