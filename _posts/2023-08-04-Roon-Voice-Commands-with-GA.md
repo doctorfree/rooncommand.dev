@@ -10,9 +10,9 @@ img_path: "/posts/20230804"
 ## Overview
 
 Activating and configuring the
-[MMM-GoogleAssistant](http://wiki.bugsounet.fr/en/MMM-GoogleAssistant)
-and [MMM-Detector](http://wiki.bugsounet.fr/en/MMM-Detector)
-modules on a [MagicMirror](https://magicmirror.builders/) can enable
+[MMM-GoogleAssistant](http://wiki.bugsounet.fr/en/MMM-GoogleAssistant){:target="_blank"}{:rel="noopener noreferrer"}
+and [MMM-Detector](http://wiki.bugsounet.fr/en/MMM-Detector){:target="_blank"}{:rel="noopener noreferrer"}
+modules on a [MagicMirror](https://magicmirror.builders/){:target="_blank"}{:rel="noopener noreferrer"} can enable
 the use of recipes to control Roon with voice commands using Google Assistant.
 
 Google Assistant voice control of Roon utilizes a command line interface
@@ -29,9 +29,9 @@ using Google Assistant and the setup precedure required.
 ### Google Assistant Requirements
 
 This method for voice control of Roon requires a
-[MagicMirror](https://magicmirror.builders/) with the
-[MMM-GoogleAssistant wiki](http://wiki.bugsounet.fr/en/MMM-GoogleAssistant)
-and [MMM-Detector wiki](http://wiki.bugsounet.fr/en/MMM-Detector) modules
+[MagicMirror](https://magicmirror.builders/){:target="_blank"}{:rel="noopener noreferrer"} with the
+[MMM-GoogleAssistant wiki](http://wiki.bugsounet.fr/en/MMM-GoogleAssistant){:target="_blank"}{:rel="noopener noreferrer"}
+and [MMM-Detector wiki](http://wiki.bugsounet.fr/en/MMM-Detector){:target="_blank"}{:rel="noopener noreferrer"} modules
 activated and configured properly. Setup for this method is considerably
 more difficult but once accomplished results in a superior quality setup
 with far more ease and flexibility of use. The Siri setup requires SSH and
@@ -44,9 +44,9 @@ The Google Assistant setup requires a MagicMirror - something
 I am guessing most people do not have. However, the MagicMirror is super
 cool so set one up then use this Roon voice control method :smiley:
 To get started with a MagicMirror installation, see the
-[MagicMirror Documentation](https://docs.magicmirror.builders/).
+[MagicMirror Documentation](https://docs.magicmirror.builders/){:target="_blank"}{:rel="noopener noreferrer"}.
 Alternately, and preferably, install the
-[MirrorCommand package](https://github.com/doctorfree/MirrorCommand)
+[MirrorCommand package](https://github.com/doctorfree/MirrorCommand){:target="_blank"}{:rel="noopener noreferrer"}
 which performs an automated installation and configuration of MagicMirror
 along with required modules.
 
@@ -54,14 +54,14 @@ along with required modules.
 
 If you have a MagicMirror with a microphone then you can setup Google Assistant
 by following the instructions at the
-[MMM-GoogleAssistant wiki](http://wiki.bugsounet.fr/en/MMM-GoogleAssistant).
+[MMM-GoogleAssistant wiki](http://wiki.bugsounet.fr/en/MMM-GoogleAssistant){:target="_blank"}{:rel="noopener noreferrer"}.
 This setup is not simple as it requires a Google Project with Actions and OAuth
 credentials. However, I found this 12 year old girl on YouTube who did it and
 so I figured I could too. It turns out I could so you probably can too.
 
 MMM-GoogleAssistant requires MMM-Detector which can also be setup and configured
 following the instructins at the
-[MMM-Detector wiki](http://wiki.bugsounet.fr/en/MMM-Detector).
+[MMM-Detector wiki](http://wiki.bugsounet.fr/en/MMM-Detector){:target="_blank"}{:rel="noopener noreferrer"}.
 
 ### Google Assistant Roon Control Setup
 
@@ -77,9 +77,9 @@ that you get a response from Google Assistant. It it's working we can proceed.
 Voice control of Roon as described in this document requires the
 use of a command line interface to issue the Roon commands. This is
 accomplished with the
-[RoonCommandLine](https://github.com/doctorfree/RoonCommandLine)
+[RoonCommandLine](https://github.com/doctorfree/RoonCommandLine){:target="_blank"}{:rel="noopener noreferrer"}
 package which contains a shell command that acts as a frontend to
-the [Python Roon API](https://github.com/pavoni/pyroon).
+the [Python Roon API](https://github.com/pavoni/pyroon){:target="_blank"}{:rel="noopener noreferrer"}.
 
 See the
 [RoonCommandLine website](https://rooncommand.dev)
@@ -89,10 +89,10 @@ configuration, and use.
 #### RoonCommandLine Requirements
 
 RoonCommandLine can be installed on either Linux or Mac OS X systems.
-It requires a [Roon Core System](https://roonlabs.com/) reachable on the
-local network, [Bash](<https://en.wikipedia.org/wiki/Bash_(Unix_shell)>),
-[Python 3](https://www.python.org/), and the
-[Python Roon API](https://github.com/pavoni/pyroon). The Python Roon API
+It requires a [Roon Core System](https://roonlabs.com/){:target="_blank"}{:rel="noopener noreferrer"} reachable on the
+local network, [Bash](https://en.wikipedia.org/wiki/Bash_(Unix_shell)){:target="_blank"}{:rel="noopener noreferrer"},
+[Python 3](https://www.python.org/){:target="_blank"}{:rel="noopener noreferrer"}, and the
+[Python Roon API](https://github.com/pavoni/pyroon){:target="_blank"}{:rel="noopener noreferrer"}. The Python Roon API
 will be installed as part of the RoonCommandLine installation process.
 
 Ensure that a Roon Core System is running on the local area network and
@@ -121,7 +121,7 @@ contents of the file `/etc/os-release`.
 
 To install on a Debian based Linux system, download the latest Debian format
 package from the
-[RoonCommandLine Releases](https://github.com/doctorfree/RoonCommandLine/releases).
+[RoonCommandLine Releases](https://github.com/doctorfree/RoonCommandLine/releases){:target="_blank"}{:rel="noopener noreferrer"}.
 
 Install the RoonCommandLine package by executing the command
 
@@ -143,7 +143,7 @@ openSUSE, OpenMandriva, Mandrake Linux, Red Hat Linux, and Oracle Linux.
 
 To install on an RPM based Linux system, download the latest RPM format
 package from the
-[RoonCommandLine Releases](https://github.com/doctorfree/RoonCommandLine/releases).
+[RoonCommandLine Releases](https://github.com/doctorfree/RoonCommandLine/releases){:target="_blank"}{:rel="noopener noreferrer"}.
 
 Install the RoonCommandLine package by executing the command
 
@@ -160,7 +160,7 @@ sudo rpm -i ./RoonCommandLine_<version>-<release>.rpm
 ##### Mac OS X installation
 
 RoonCommandLine requires Python 3. See the excellent
-[Hitchhiker's Guide to Python](https://docs.python-guide.org/starting/install3/osx/)
+[Hitchhiker's Guide to Python](https://docs.python-guide.org/starting/install3/osx/){:target="_blank"}{:rel="noopener noreferrer"}
 for step by step instructions to install Python 3 on Mac OS X. If you already
 have `Homebrew` installed on your Mac then you can install Python 3 with:
 
@@ -209,11 +209,11 @@ then that name change will also need to be reflected in the `roon_api.ini` group
 ### MirrorCommand Setup
 
 Many Google Assistant voice triggers are preconfigured as MMM-GoogleAssistant
-recipes in the [MirrorCommand package](https://github.com/doctorfree/MirrorCommand).
+recipes in the [MirrorCommand package](https://github.com/doctorfree/MirrorCommand){:target="_blank"}{:rel="noopener noreferrer"}.
 Installation of MirrorCommand is not required but greatly eases initial setup
 of the Google Assistant recipes for voice control of Roon. Installation is
 recommended. See the
-[MirrorCommand README](https://github.com/doctorfree/MirrorCommand/blob/master/README)
+[MirrorCommand README](https://github.com/doctorfree/MirrorCommand/blob/master/README){:target="_blank"}{:rel="noopener noreferrer"}
 for installation and setup instructions. The initial installation is similar to
 that for the RoonCommandLine package:
 
@@ -222,7 +222,7 @@ that for the RoonCommandLine package:
 Many Google Assistant voice triggers are preconfigured as MMM-GoogleAssistant
 To install MirrorCommand on the MagicMirror system:
 
-[Download the latest Debian or RPM format packages](https://github.com/doctorfree/MirrorCommand/releases)
+[Download the latest Debian or RPM format packages](https://github.com/doctorfree/MirrorCommand/releases){:target="_blank"}{:rel="noopener noreferrer"}
 
 **NOTE:** The automated configuration requires access to some X11 graphical utilities. Depending upon your system's X11 configuration, it may be necessary to grant the _root_ user access to the display. To do so, prior to installation issue the command:
 
@@ -317,6 +317,6 @@ a little more difficult like "computer, play artist Deep Purple".
 
 ### References
 
-- [MagicMirror](https://magicmirror.builders/)
-- [MMM-GoogleAssistant wiki](http://wiki.bugsounet.fr/en/MMM-GoogleAssistant)
-- [MMM-Detector wiki](http://wiki.bugsounet.fr/en/MMM-Detector)
+- [MagicMirror](https://magicmirror.builders/){:target="_blank"}{:rel="noopener noreferrer"}
+- [MMM-GoogleAssistant wiki](http://wiki.bugsounet.fr/en/MMM-GoogleAssistant){:target="_blank"}{:rel="noopener noreferrer"}
+- [MMM-Detector wiki](http://wiki.bugsounet.fr/en/MMM-Detector){:target="_blank"}{:rel="noopener noreferrer"}

@@ -27,9 +27,9 @@ using Siri and the setup precedure required.
 Voice control of Roon as described in this document requires the
 use of a command line interface to issue the Roon commands. This is
 accomplished with the
-[RoonCommandLine](https://github.com/doctorfree/RoonCommandLine)
+[RoonCommandLine](https://github.com/doctorfree/RoonCommandLine){:target="_blank"}{:rel="noopener noreferrer"}
 package which contains a shell command that acts as a frontend to
-the [Python Roon API](https://github.com/pavoni/pyroon).
+the [Python Roon API](https://github.com/pavoni/pyroon){:target="_blank"}{:rel="noopener noreferrer"}.
 
 See the
 [RoonCommandLine website](https://rooncommand.dev)
@@ -39,10 +39,10 @@ configuration, and use.
 ### RoonCommandLine Requirements
 
 RoonCommandLine can be installed on either Linux or Mac OS X systems.
-It requires a [Roon Core System](https://roonlabs.com/) reachable on the
-local network, [Bash](<https://en.wikipedia.org/wiki/Bash_(Unix_shell)>),
-[Python 3](https://www.python.org/), and the
-[Python Roon API](https://github.com/pavoni/pyroon). The Python Roon API
+It requires a [Roon Core System](https://roonlabs.com/){:target="_blank"}{:rel="noopener noreferrer"} reachable on the
+local network, [Bash](https://en.wikipedia.org/wiki/Bash_(Unix_shell)){:target="_blank"}{:rel="noopener noreferrer"},
+[Python 3](https://www.python.org/){:target="_blank"}{:rel="noopener noreferrer"}, and the
+[Python Roon API](https://github.com/pavoni/pyroon){:target="_blank"}{:rel="noopener noreferrer"}. The Python Roon API
 will be installed as part of the RoonCommandLine installation process.
 
 Ensure that a Roon Core System is running on the local area network and
@@ -71,7 +71,7 @@ contents of the file `/etc/os-release`.
 
 To install on a Debian based Linux system, download the latest Debian format
 package from the
-[RoonCommandLine Releases](https://github.com/doctorfree/RoonCommandLine/releases).
+[RoonCommandLine Releases](https://github.com/doctorfree/RoonCommandLine/releases){:target="_blank"}{:rel="noopener noreferrer"}.
 
 Install the RoonCommandLine package by executing the command
 
@@ -93,7 +93,7 @@ openSUSE, OpenMandriva, Mandrake Linux, Red Hat Linux, and Oracle Linux.
 
 To install on an RPM based Linux system, download the latest RPM format
 package from the
-[RoonCommandLine Releases](https://github.com/doctorfree/RoonCommandLine/releases).
+[RoonCommandLine Releases](https://github.com/doctorfree/RoonCommandLine/releases){:target="_blank"}{:rel="noopener noreferrer"}.
 
 Install the RoonCommandLine package by executing the command
 
@@ -110,7 +110,7 @@ sudo rpm -i ./RoonCommandLine_<version>-<release>.rpm
 #### Mac OS X installation
 
 RoonCommandLine requires Python 3. See the excellent
-[Hitchhiker's Guide to Python](https://docs.python-guide.org/starting/install3/osx/)
+[Hitchhiker's Guide to Python](https://docs.python-guide.org/starting/install3/osx/){:target="_blank"}{:rel="noopener noreferrer"}
 for step by step instructions to install Python 3 on Mac OS X. If you already
 have `Homebrew` installed on your Mac then you can install Python 3 with:
 
@@ -175,7 +175,7 @@ IP address returned for the Roon Core by `get_core_ip` is correct. If a
 simple listing of zones with `roon -l zones` still fails then check the
 [Troubleshooting](https://rooncommand.dev#troubleshooting)
 section of the
-[RoonCommandLine README](https://github.com/doctorfree/RoonCommandLine/blob/master/README.md)
+[RoonCommandLine README](https://github.com/doctorfree/RoonCommandLine/blob/master/README.md){:target="_blank"}{:rel="noopener noreferrer"}
 
 After verifying the RoonCommandLine package is successfully communicating
 with the Roon Core, proceed to the next section.
@@ -183,12 +183,12 @@ with the Roon Core, proceed to the next section.
 ## Apple Siri Setup
 
 To get started with Apple SSH shortcuts first enable SSH access on the system
-where the [RoonCommandLine](https://github.com/doctorfree/RoonCommandLine)
+where the [RoonCommandLine](https://github.com/doctorfree/RoonCommandLine){:target="_blank"}{:rel="noopener noreferrer"}
 package was installed. Follow one of the many guides for setting up SSH
 with Apple Shortcuts. For example, these two guides should get you started:
 
-- [Remote control your Mac with your iPhone and SSH Key Shortcuts](https://dougbeal.com/2019/11/02/remote-control-your-mac-with-your-iphone-and-ssh-key-shortcuts/)
-- [Setting up SSH for Shortcuts](https://www.thoughtasylum.com/2020/06/01/setting-up-ssh-for-shortcuts/)
+- [Remote control your Mac with your iPhone and SSH Key Shortcuts](https://dougbeal.com/2019/11/02/remote-control-your-mac-with-your-iphone-and-ssh-key-shortcuts/){:target="_blank"}{:rel="noopener noreferrer"}
+- [Setting up SSH for Shortcuts](https://www.thoughtasylum.com/2020/06/01/setting-up-ssh-for-shortcuts/){:target="_blank"}{:rel="noopener noreferrer"}
 
 Verify that Apple Siri is working and responds to queries like "Hey Siri",
 "What time is it?". Verify that SSH Shortcuts are working by creating a
@@ -394,5 +394,5 @@ No explanation for this behavior has yet been discovered.
 
 ## References
 
-- [Remote control your Mac with your iPhone and SSH Key Shortcuts](https://dougbeal.com/2019/11/02/remote-control-your-mac-with-your-iphone-and-ssh-key-shortcuts/)
-- [Setting up SSH for Shortcuts](https://www.thoughtasylum.com/2020/06/01/setting-up-ssh-for-shortcuts/)
+- [Remote control your Mac with your iPhone and SSH Key Shortcuts](https://dougbeal.com/2019/11/02/remote-control-your-mac-with-your-iphone-and-ssh-key-shortcuts/){:target="_blank"}{:rel="noopener noreferrer"}
+- [Setting up SSH for Shortcuts](https://www.thoughtasylum.com/2020/06/01/setting-up-ssh-for-shortcuts/){:target="_blank"}{:rel="noopener noreferrer"}

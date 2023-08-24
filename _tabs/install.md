@@ -40,7 +40,7 @@ contents of the file `/etc/os-release`.
 
 To install on a Debian based Linux system, download the latest Debian format
 package from the
-[RoonCommandLine Releases](https://github.com/doctorfree/RoonCommandLine/-/releases).
+[RoonCommandLine Releases](https://github.com/doctorfree/RoonCommandLine/-/releases){:target="_blank"}{:rel="noopener noreferrer"}.
 
 Install the RoonCommandLine package by executing the command
 
@@ -62,7 +62,7 @@ openSUSE, OpenMandriva, Mandrake Linux, Red Hat Linux, and Oracle Linux.
 
 To install on an RPM based Linux system, download the latest RPM format
 package from the
-[RoonCommandLine Releases](https://github.com/doctorfree/RoonCommandLine/-/releases).
+[RoonCommandLine Releases](https://github.com/doctorfree/RoonCommandLine/-/releases){:target="_blank"}{:rel="noopener noreferrer"}.
 
 Install the RoonCommandLine package by executing the command
 
@@ -85,7 +85,7 @@ intended for use on those Linux platforms that do not support Debian or
 Red Hat format installation packages.
 
 RoonCommandLine requires Python 3. See the
-[Guide to installing Python on Linux](https://docs.python-guide.org/starting/install3/linux/)
+[Guide to installing Python on Linux](https://docs.python-guide.org/starting/install3/linux/){:target="_blank"}{:rel="noopener noreferrer"}
 for step by step instructions to install Python 3 on Linux.
 
 Once the Python 3 dependency is met, install RoonCommandLine by
@@ -104,7 +104,7 @@ going to enable SSH support, at least make sure the user has sudo privileges.
 ### Mac OS X installation
 
 RoonCommandLine requires Python 3. See the excellent
-[Hitchhiker's Guide to Python](https://docs.python-guide.org/starting/install3/osx/)
+[Hitchhiker's Guide to Python](https://docs.python-guide.org/starting/install3/osx/){:target="_blank"}{:rel="noopener noreferrer"}
 for step by step instructions to install Python 3 on Mac OS X. If you already
 have `Homebrew` installed on your Mac then you can install Python 3 with:
 

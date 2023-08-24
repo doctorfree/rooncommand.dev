@@ -79,7 +79,7 @@ term `__all__` indicates match all albums, artists, playlists, genres, or tags.
 All commands and playback can target a specified Roon output zone.
 
 Additional detail and info can be found in the
-[RoonCommandLine Wiki](https://github.com/doctorfree/RoonCommandLine/-/wikis/home).
+[RoonCommandLine Wiki](https://github.com/doctorfree/RoonCommandLine/-/wikis/home){:target="_blank"}{:rel="noopener noreferrer"}.
 
 <div align="center">
   <h2 id="connect">Connect</h2>

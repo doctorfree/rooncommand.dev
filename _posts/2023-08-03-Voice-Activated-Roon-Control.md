@@ -50,12 +50,12 @@ the `roon` frontend to the Python Roon API and added shortcuts for a variety
 of Roon commands and control.
 
 To get started with Apple SSH shortcuts first enable SSH access on the system
-where the [RoonCommandLine](https://github.com/doctorfree/RoonCommandLine)
+where the [RoonCommandLine](https://github.com/doctorfree/RoonCommandLine){:target="_blank"}{:rel="noopener noreferrer"}
 package will be installed. Follow one of the many guides for setting up SSH
 with Apple Shortcuts. For example, these two guides should get you started:
 
-- [Remote control your Mac with your iPhone and SSH Key Shortcuts](https://dougbeal.com/2019/11/02/remote-control-your-mac-with-your-iphone-and-ssh-key-shortcuts/)
-- [Setting up SSH for Shortcuts](https://www.thoughtasylum.com/2020/06/01/setting-up-ssh-for-shortcuts/)
+- [Remote control your Mac with your iPhone and SSH Key Shortcuts](https://dougbeal.com/2019/11/02/remote-control-your-mac-with-your-iphone-and-ssh-key-shortcuts/){:target="_blank"}{:rel="noopener noreferrer"}
+- [Setting up SSH for Shortcuts](https://www.thoughtasylum.com/2020/06/01/setting-up-ssh-for-shortcuts/){:target="_blank"}{:rel="noopener noreferrer"}
 
 Verify that Apple Siri is working and responds to queries like "Hey Siri", "What time is it?". Verify that SSH Shortcuts are working by creating a shortcut that performs
 a simple command like `ping` as described in the guides above. Once Siri and
@@ -78,9 +78,9 @@ Google Assistant.
 ### Google Assistant Requirements
 
 This method for voice control of Roon requires a
-[MagicMirror](https://magicmirror.builders/) with the
-[MMM-GoogleAssistant wiki](http://wiki.bugsounet.fr/en/MMM-GoogleAssistant)
-and [MMM-Detector wiki](http://wiki.bugsounet.fr/en/MMM-Detector) modules
+[MagicMirror](https://magicmirror.builders/){:target="_blank"}{:rel="noopener noreferrer"} with the
+[MMM-GoogleAssistant wiki](http://wiki.bugsounet.fr/en/MMM-GoogleAssistant){:target="_blank"}{:rel="noopener noreferrer"}
+and [MMM-Detector wiki](http://wiki.bugsounet.fr/en/MMM-Detector){:target="_blank"}{:rel="noopener noreferrer"} modules
 activated and configured properly. Setup for this method is considerably
 more difficult but once accomplished results in a superior quality setup
 with far more ease and flexibility of use. The Siri setup requires SSH and
@@ -91,9 +91,9 @@ The Google Assistant setup requires a MagicMirror - something
 I am guessing most people do not have. However, the MagicMirror is super
 cool so set one up then use this Roon voice control method :smiley:
 To get started with a MagicMirror installation, see the
-[MagicMirror Documentation](https://docs.magicmirror.builders/).
+[MagicMirror Documentation](https://docs.magicmirror.builders/){:target="_blank"}{:rel="noopener noreferrer"}.
 Alternately, and preferably, install the
-[MirrorCommand package](https://github.com/doctorfree/MirrorCommand)
+[MirrorCommand package](https://github.com/doctorfree/MirrorCommand){:target="_blank"}{:rel="noopener noreferrer"}
 which performs an automated installation and configuration of MagicMirror
 along with required modules.
 
@@ -101,14 +101,14 @@ along with required modules.
 
 If you have a MagicMirror with a microphone then you can setup Google Assistant
 by following the instructions at the
-[MMM-GoogleAssistant wiki](http://wiki.bugsounet.fr/en/MMM-GoogleAssistant).
+[MMM-GoogleAssistant wiki](http://wiki.bugsounet.fr/en/MMM-GoogleAssistant){:target="_blank"}{:rel="noopener noreferrer"}.
 This setup is not simple as it requires a Google Project with Actions and OAuth
 credentials. However, I found this 12 year old girl on YouTube who did it and
 so I figured I could too. It turns out I could so you probably can too.
 
 MMM-GoogleAssistant requires MMM-Detector which can also be setup and configured
 following the instructins at the
-[MMM-Detector wiki](http://wiki.bugsounet.fr/en/MMM-Detector).
+[MMM-Detector wiki](http://wiki.bugsounet.fr/en/MMM-Detector){:target="_blank"}{:rel="noopener noreferrer"}.
 
 ### Google Assistant Roon Control Setup
 
@@ -124,9 +124,9 @@ that you get a response from Google Assistant. It it's working we can proceed.
 Voice control of Roon as described in this document requires the
 use of a command line interface to issue the Roon commands. This is
 accomplished with the
-[RoonCommandLine](https://github.com/doctorfree/RoonCommandLine)
+[RoonCommandLine](https://github.com/doctorfree/RoonCommandLine){:target="_blank"}{:rel="noopener noreferrer"}
 package which contains a shell command that acts as a frontend to
-the [Python Roon API](https://github.com/pavoni/pyroon).
+the [Python Roon API](https://github.com/pavoni/pyroon){:target="_blank"}{:rel="noopener noreferrer"}.
 
 See the
 [RoonCommandLine website](https://rooncommand.dev)
@@ -136,10 +136,10 @@ configuration, and use.
 ### RoonCommandLine Requirements
 
 RoonCommandLine can be installed on either Linux or Mac OS X systems.
-It requires a [Roon Core System](https://roonlabs.com/) reachable on the
-local network, [Bash](<https://en.wikipedia.org/wiki/Bash_(Unix_shell)>),
-[Python 3](https://www.python.org/), and the
-[Python Roon API](https://github.com/pavoni/pyroon). The Python Roon API
+It requires a [Roon Core System](https://roonlabs.com/){:target="_blank"}{:rel="noopener noreferrer"} reachable on the
+local network, [Bash](https://en.wikipedia.org/wiki/Bash_(Unix_shell)){:target="_blank"}{:rel="noopener noreferrer"},
+[Python 3](https://www.python.org/){:target="_blank"}{:rel="noopener noreferrer"}, and the
+[Python Roon API](https://github.com/pavoni/pyroon){:target="_blank"}{:rel="noopener noreferrer"}. The Python Roon API
 will be installed as part of the RoonCommandLine installation process.
 
 Ensure that a Roon Core System is running on the local area network and
@@ -168,7 +168,7 @@ contents of the file `/etc/os-release`.
 
 To install on a Debian based Linux system, download the latest Debian format
 package from the
-[RoonCommandLine Releases](https://github.com/doctorfree/RoonCommandLine/releases).
+[RoonCommandLine Releases](https://github.com/doctorfree/RoonCommandLine/releases){:target="_blank"}{:rel="noopener noreferrer"}.
 
 Install the RoonCommandLine package by executing the command
 
@@ -190,7 +190,7 @@ openSUSE, OpenMandriva, Mandrake Linux, Red Hat Linux, and Oracle Linux.
 
 To install on an RPM based Linux system, download the latest RPM format
 package from the
-[RoonCommandLine Releases](https://github.com/doctorfree/RoonCommandLine/releases).
+[RoonCommandLine Releases](https://github.com/doctorfree/RoonCommandLine/releases){:target="_blank"}{:rel="noopener noreferrer"}.
 
 Install the RoonCommandLine package by executing the command
 
@@ -207,7 +207,7 @@ sudo rpm -i ./RoonCommandLine_<version>-<release>.rpm
 #### Mac OS X installation
 
 RoonCommandLine requires Python 3. See the excellent
-[Hitchhiker's Guide to Python](https://docs.python-guide.org/starting/install3/osx/)
+[Hitchhiker's Guide to Python](https://docs.python-guide.org/starting/install3/osx/){:target="_blank"}{:rel="noopener noreferrer"}
 for step by step instructions to install Python 3 on Mac OS X. If you already
 have `Homebrew` installed on your Mac then you can install Python 3 with:
 
@@ -270,11 +270,11 @@ for a detailed walkthru of Roon voice control using Siri and Apple Shortcuts.
 
 ### SSH Setup for Apple Shortcuts
 
-- [Remote control your Mac with your iPhone and SSH Key Shortcuts](https://dougbeal.com/2019/11/02/remote-control-your-mac-with-your-iphone-and-ssh-key-shortcuts/)
-- [Setting up SSH for Shortcuts](https://www.thoughtasylum.com/2020/06/01/setting-up-ssh-for-shortcuts/)
+- [Remote control your Mac with your iPhone and SSH Key Shortcuts](https://dougbeal.com/2019/11/02/remote-control-your-mac-with-your-iphone-and-ssh-key-shortcuts/){:target="_blank"}{:rel="noopener noreferrer"}
+- [Setting up SSH for Shortcuts](https://www.thoughtasylum.com/2020/06/01/setting-up-ssh-for-shortcuts/){:target="_blank"}{:rel="noopener noreferrer"}
 
 ### MagicMirror Google Assistant Setup
 
-- [MagicMirror](https://magicmirror.builders/)
-- [MMM-GoogleAssistant wiki](http://wiki.bugsounet.fr/en/MMM-GoogleAssistant)
-- [MMM-Detector wiki](http://wiki.bugsounet.fr/en/MMM-Detector)
+- [MagicMirror](https://magicmirror.builders/){:target="_blank"}{:rel="noopener noreferrer"}
+- [MMM-GoogleAssistant wiki](http://wiki.bugsounet.fr/en/MMM-GoogleAssistant){:target="_blank"}{:rel="noopener noreferrer"}
+- [MMM-Detector wiki](http://wiki.bugsounet.fr/en/MMM-Detector){:target="_blank"}{:rel="noopener noreferrer"}
